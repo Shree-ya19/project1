@@ -1,0 +1,367 @@
+/*------------HEADER START----------------------------*/
+.golden {
+        
+        color: #e7d31f;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+/* For smaller screens (phones) */
+@media (max-width: 576px) {
+    .golden {
+        font-size: 1.5rem; /* Smaller font size for phones */
+    }
+}
+
+.nav1{
+    background-color:#00440b;
+    
+    
+}
+/* Sticky Header */
+.header {
+    position: -webkit-sticky; /* Safari support */
+    position: sticky;
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: white; /* Optional, add a background */
+    width: 100%; /* Make sure it spans the full width */
+}
+/*------------HEADER END----------------------------*/
+
+
+/*------------NAVBAR START----------------------------*/
+.nav2{
+    background-color:rgba(0, 68, 11, 0.5); /* Make the navbar transparent initially */
+    position: fixed; /* Position over the slider */
+    top: 0; /* Stick to the top of the screen */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Stay on top of other content */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    
+}
+.carousel-item {
+    color:#00440b;
+}
+.home{
+    color: #e7d31f;
+    margin-right:139px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 10px;
+}
+.home:hover{
+    color:white;
+}
+.homee:hover{
+    color: white;
+    
+}
+
+.homee{
+    color:#e7d31f;
+    margin-right:145px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 140px;
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 10px;
+}
+.button{
+    color: #00440b;
+    background-color: #00440b;
+    height: 31px;
+    width:56px;
+}
+.lbi{
+   color: #e7d31f;
+}
+.drop1{
+background-color: #00440b;
+}
+
+.home1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#e7d31f;
+    font-size: 18px;
+}
+.home1:hover{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    font-size: 18px;
+    background: white;
+}
+
+
+/*------------NAVBAR END----------------------------*/
+
+/*-----------CONATAINER 1 START-------------------------*/
+.container1{
+    margin-top: 100px;
+    margin-bottom:100px;
+}
+
+.intro{
+    text-align:center;
+    color:#00440b;
+}
+.intropara{
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.aboutbtn
+{
+    background-color: #00440b;
+    height:48px;
+    width:135px;
+}
+.learn
+{
+    color:#d6bc1a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+}
+.learn:hover{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;   
+}
+/*-----------CONATAINER 1 END---------------------------*/
+
+
+/*--SLIDE------------------------------------------------*/
+.slidercont{
+   
+    margin-bottom: 50px;
+    padding:15px;
+    background-color: #00440b;
+   
+}
+.sliderrow{
+    padding: 30px;
+    
+}
+
+.sliderbi{
+    color: #e7d31f;
+    font-size: 40px;
+    
+}
+
+.sliderbi:hover{
+    color: white;
+    font-size: 40px;
+}
+.card1{
+    border: 2px solid white;
+}
+.foodf{
+    color:#e7d31f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    font-size: 23px;
+}
+.foodf:hover{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    font-size: 23px;
+}
+.sliderc{
+    background-color:#00440b;
+}
+.colcont{
+    width:415px;
+    margin-right: 29px;
+    
+   
+}
+.colcont1{
+    width:415px;
+    margin-left: 0;
+    margin-right: 29px;
+    
+}
+
+
+/*--SLIDE------------------------------------------------*/
+
+/*  WHY US CONTAINER START---------------------------------------------*/
+.whycontainer{
+    padding:40px;
+    margin-bottom: 20px;
+}
+.whyh{
+    font-weight: bold;
+    color:#00440b;font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 29px;
+    border:2px solid #00440b;
+
+}
+.whyp{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 19px;
+}
+.whycard{
+    border:2px solid #00440b;
+}
+.whybtn{
+background-color:#00440b;
+border: #00440b;
+}
+.whyp1{
+    color: #e7d31f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.play{
+    width:100px;
+    height:100px;
+    background: #e7d31f;
+    border-radius: 50px;
+    
+}
+.playp{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:blue;
+    font-size: 14px;
+    margin-top:5px;
+}
+.subrow
+{
+    padding:20px;
+}
+/* subcontainer-------------------------------------------------*/
+
+
+
+/*  WHY US CONTAINER END-----------------------------------------------*/
+.subp{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+
+}
+.laptop
+{
+    font-size: 50px;
+    margin-left: 80px;
+    color:#00440b;
+
+}
+.laptopp
+{
+    font-size: 19px;
+    color:#00440b;
+    
+}
+
+/*  WHY US CONTAINER END-----------------------------------------------*/
+
+
+
+
+/*------------------FOOTER---------------------------------------*/
+.footer{
+    background-color: #00440b;
+}
+.fcontainer
+{
+    padding:40px;
+}
+.fcontainer1
+{
+    padding:20px;
+}
+.golden
+{
+    font-size:23px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.golden1
+{
+    font-size:23px;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+.logoh
+{
+color:#e7d31f;
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+margin-top:10px;
+}
+
+.logop
+{
+color:#e7d31f;
+font-size: 18px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+margin-top: -16px;
+}
+.col1{
+color:#e7d31f;
+font-size: 26px;
+font-family: Arial, Helvetica, sans-serif;
+margin-top:110px;
+
+}
+.col11
+{
+color:#e7d31f;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+}
+.follow{
+color:#e7d31f;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 26px;
+margin-top: 96px;;
+}
+.followbi
+{
+    color: #e7d31f;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transition: .3s ease-in-out;
+   
+    
+}
+.followbi:hover
+{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transform:rotate(360deg);
+    display:inline-block;
+  
+    
+}
+.searchbi
+{
+    color:#00440b;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+.search-box {
+    border: 2px solid #00440b; /* Search box border color */
+    color: #00440b; /* Search text color */
+}
+
+.search-box::placeholder {
+    color: #00440b; /* Placeholder text color */
+    opacity: 0.7;
+}
+
+.search-btn {
+    background-color: #e7d31f; /* Button background */
+    border-color: #e7d31f;
+    color: #00440b; /* Button text color */
+}
+
+.search-btn:hover {
+    background-color: #d6bc1a; /* Slightly darker yellow on hover */
+    border-color: #d6bc1a;
+    color: black;
+}
+
+
+
+/*------------------fOOTER---------------------------------------*/
