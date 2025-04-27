@@ -10,18 +10,18 @@
         <p>You can scroll through the calendar pages directly below, or open it in a new tab as a PDF.</p>
 
         <!-- PDF viewer link -->
-        <a href="{{ asset('assets/pdfs/calander.pdf') }}" target="_blank" class="btn btn-primary mb-4 pdfbtn">
+        <a href="{{ $calendar->pdf }}" target="_blank" class="btn btn-primary mb-4 pdfbtn">
             Open Calendar as PDF
         </a>
 
         <!-- Display calendar images -->
         <div class="calendar-images mt-4">
-            <img src="{{ asset('assets/images/calander_page1.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 1">
-            <img src="{{ asset('assets/images/calander_page2.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 2">
-            <img src="{{ asset('assets/images/calander_page3.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 3">
-            <img src="{{ asset('assets/images/calander_page4.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 4">
-            <img src="{{ asset('assets/images/calander_page5.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 5">
-            <img src="{{ asset('assets/images/calander_page6.jpg') }}" class="img-fluid mb-3" alt="Calendar Page 6">
+            <img src="{{ $calendar->img1 }}" class="img-fluid mb-3" alt="Calendar Page 1">
+            <img src="{{ $calendar->img2 }}" class="img-fluid mb-3" alt="Calendar Page 2">
+            <img src="{{ $calendar->img3 }}" class="img-fluid mb-3" alt="Calendar Page 3">
+            <img src="{{ $calendar->img4 }}" class="img-fluid mb-3" alt="Calendar Page 4">
+            <img src="{{ $calendar->img5 }}" class="img-fluid mb-3" alt="Calendar Page 5">
+            <img src="{{ $calendar->img6 }}" class="img-fluid mb-3" alt="Calendar Page 6">
             <!-- Add more pages as needed -->
         </div>
 

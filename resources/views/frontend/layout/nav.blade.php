@@ -32,7 +32,7 @@
         </li>
             
           
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link home" href="{{ route('contact_us') }}">Contact Us</a>
         </li>

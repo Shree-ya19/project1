@@ -19,16 +19,16 @@
   <link rel="icon" href="https://themewagon.github.io/Mantis-Bootstrap/assets/images/favicon.svg" type="image/x-icon"> <!-- [Google Font] Family -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" id="main-font-link">
 <!-- [Tabler Icons] https://tablericons.com -->
-<link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" >
+<link rel="stylesheet" href="{{ asset('assets/fonts/tabler-icons.min.css') }}" >
 <!-- [Feather Icons] https://feathericons.com -->
-<link rel="stylesheet" href="../assets/fonts/feather.css" >
+<link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}" >
 <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/fontawesome.css" >
+<link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}" >
 <!-- [Material Icons] https://fonts.google.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/material.css" >
+<link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}" >
 <!-- [Template CSS Files] -->
-<link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" >
-<link rel="stylesheet" href="../assets/css/style-preset.css" >
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" id="main-style-link" >
+<link rel="stylesheet" href="{{ asset('assets/css/style-preset.css') }}" >
 
 </head>
 <!-- [Head] end -->
@@ -58,6 +58,8 @@
       <!-- [ breadcrumb ] end -->
       <!-- [ Main Content ] start -->
       <div class="row">
+      @include('sweetalert::alert')
+
 @yield('container')
       </div>
     </div>
@@ -66,16 +68,16 @@
  @include('admin.layout.footer')
 
   <!-- [Page Specific JS] start -->
-  <script src="../assets/js/plugins/apexcharts.min.js"></script>
-  <script src="../assets/js/pages/dashboard-default.js"></script>
+  <script src="{{ asset('assets/js/plugins/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('assets/js/pages/dashboard-default.js') }}"></script>
   <!-- [Page Specific JS] end -->
   <!-- Required Js -->
-  <script src="../assets/js/plugins/popper.min.js"></script>
-  <script src="../assets/js/plugins/simplebar.min.js"></script>
-  <script src="../assets/js/plugins/bootstrap.min.js"></script>
-  <script src="../assets/js/fonts/custom-font.js"></script>
-  <script src="../assets/js/pcoded.js"></script>
-  <script src="../assets/js/plugins/feather.min.js"></script>
+  <script src="{{ asset('assets/js/plugins/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/simplebar.min.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/fonts/custom-font.js') }}"></script>
+  <script src="{{ asset('assets/js/pcoded.js') }}"></script>
+  <script src="{{ asset('assets/js/plugins/feather.min.js') }}"></script>
 
   
   

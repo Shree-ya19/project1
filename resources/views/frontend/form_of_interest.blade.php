@@ -4,42 +4,237 @@
 
 <h2 class="text-center mb-4 interesth">💬 Express Your Interest</h2>
 
+@if (session('success'))
+            <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
 <div class="container mt-3 interestform mb-5" style="max-width: 650px;">
-    <form class="p-4 shadow rounded interestform">
+    @extends('frontend.layout.master')
+@section('container')
+
+<h2 class="text-center mb-4 interesth">💬 Express Your Interest</h2>
+
+@if (session('success'))
+    <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
+
+<div class="container mt-3 interestform mb-5" style="max-width: 650px;">
+
+    {{-- SHOW VALIDATION ERRORS --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    {{-- FORM START --}}
+    <form action="{{ route('storeInterestForm') }}" method="post" class="p-4 shadow rounded interestform">
+        @csrf
+
         <div class="mb-3">
             <label for="name" class="form-label fw-bold">Full Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+            <input type="text" class="form-control" id="name" name="full_name" placeholder="Enter your full name">
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label fw-bold">Email Address</label>
-            <input type="email" class="form-control" id="email" placeholder="your@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="your@example.com">
         </div>
 
         <div class="mb-3">
             <label for="phone" class="form-label fw-bold">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" placeholder="98XXXXXXXX">
+            <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="98XXXXXXXX">
         </div>
 
         <div class="mb-3">
             <label for="interest" class="form-label fw-bold">I am interested in</label>
-            <select class="form-select" id="interest">
+            <select class="form-select" id="interest" name="interest">
                 <option selected disabled>Select an option</option>
                 <option>Becoming a teacher</option>
                 <option>Joining as a student</option>
                 <option>Volunteering</option>
-                <option>Learning more about the platform</option>
             </select>
         </div>
 
         <div class="mb-3">
             <label for="message" class="form-label fw-bold">Your Message</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Write something..."></textarea>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write something..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-bold interestbtn">Submit</button>
+    </form>
+    {{-- FORM END --}}
+
+</div>
+
+@if (session('success'))
+    <script>
+        setTimeout(function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.classList.add('fade');
+                successMessage.classList.remove('show');
+            }
+        }, 5000); // 5 seconds
+
+        setTimeout(function() {
+            location.reload();
+        }, 4000); // 4 seconds
+    </script>
+@endif
+
+@endsection
+@extends('frontend.layout.master')
+@section('container')
+
+<h2 class="text-center mb-4 interesth">💬 Express Your Interest</h2>
+
+@if (session('success'))
+    <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
+
+<div class="container mt-3 interestform mb-5" style="max-width: 650px;">
+
+    {{-- SHOW VALIDATION ERRORS --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    {{-- FORM START --}}
+    <form action="{{ route('storeInterestForm') }}" method="post" class="p-4 shadow rounded interestform">
+        @csrf
+
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Full Name</label>
+            <input type="text" class="form-control" id="name" name="full_name" placeholder="Enter your full name">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="your@example.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label fw-bold">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="98XXXXXXXX">
+        </div>
+
+        <div class="mb-3">
+            <label for="interest" class="form-label fw-bold">I am interested in</label>
+            <select class="form-select" id="interest" name="interest">
+                <option selected disabled>Select an option</option>
+                <option>Becoming a teacher</option>
+                <option>Joining as a student</option>
+                <option>Volunteering</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write something..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-bold interestbtn">Submit</button>
+    </form>
+    {{-- FORM END --}}
+
+</div>
+
+@if (session('success'))
+    <script>
+        setTimeout(function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.classList.add('fade');
+                successMessage.classList.remove('show');
+            }
+        }, 5000); // 5 seconds
+
+        setTimeout(function() {
+            location.reload();
+        }, 4000); // 4 seconds
+    </script>
+@endif
+
+@endsection
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+    <form action="{{ route('storeInterestForm') }}" method="post" class="p-4 shadow rounded interestform">
+        @csrf
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Full Name</label>
+            <input type="text" class="form-control" id="name" name="full_name" placeholder="Enter your full name">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="your@example.com">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label fw-bold">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="98XXXXXXXX">
+        </div>
+
+        <div class="mb-3">
+            <label for="interest" class="form-label fw-bold">I am interested in</label>
+            <select class="form-select" id="interest" name="interest">
+                <option selected disabled>Select an option</option>
+                <option>Becoming a teacher</option>
+                <option>Joining as a student</option>
+                <option>Volunteering</option>
+                
+                
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write something..."></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary w-100 fw-bold interestbtn">Submit</button>
     </form>
 </div>
+@if (session('success'))
+    <script>
+        setTimeout(function() {
+            var successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.classList.add('fade');
+                successMessage.classList.remove('show');
+            }
+        }, 5000); // 5000 milliseconds = 5 seconds
 
+        // Refresh the page after 4 seconds
+        setTimeout(function() {
+            location.reload(); // This will refresh the page
+        }, 4000); // 4000 milliseconds = 4 seconds
+    </script>
+@endif
 
 @endsection

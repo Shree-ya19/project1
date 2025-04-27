@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Contact\StoreContactRequest;
+use App\Http\Requests\InterestForm\StoreInterestRequest;
+use App\Models\Calendar;
+use App\Models\Contact;
+use App\Models\InterestForm;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -25,7 +30,8 @@ class FrontendController extends Controller
     }
     public function event_calander()
     {
-        return view("frontend.event_calander");
+        $calendar = Calendar::latest()->first(); // fetch latest calendar data
+    return view("frontend.event_calander", compact('calendar'));
     }
     public function beyond_acedemics()
     {
@@ -35,6 +41,32 @@ class FrontendController extends Controller
     {
         return view("frontend.contact_us");
     }
+    public function storeContactMessage(StoreContactRequest $request)
+    {
+        Contact::create([
+            'full_name' => $request->full_name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]);
+    
+        return redirect()->back()->with('success', 'Message sent successfully!');
+    }
+    public function storeInterestForm(StoreInterestRequest $request)
+{
+   InterestForm::create([
+        'full_name' => $request->full_name,
+        'email' => $request->email,
+        'phone_number' => $request->phone_number,
+        'interest' => $request->interest,
+        'message' => $request->message,
+   ]);
+
+   return redirect()->back()->with('success', 'Your interest has been submitted successfully!');
+}
+
+    
+        
+    
     public function core_values()
     {
         return view("frontend.core_values");

@@ -3,7 +3,7 @@
     <div class="m-header">
       <a href="index.html" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
-        <img src="https://themewagon.github.io/Mantis-Bootstrap/assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
+        <span>{{ Auth::user()->name }}</span>
       </a>
     </div>
     <div class="navbar-content">
@@ -20,21 +20,29 @@
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item">
-          <a href="https://themewagon.github.io/Mantis-Bootstrap/elements/bc_typography.html" class="pc-link">
+          <a href="{{route('admin.systemSetting.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>
-            <span class="pc-mtext">Typography</span>
+            <span class="pc-mtext">SystemSetting</span>
           </a>
         </li>
+        <li class="pc-item pc-hasmenu">
+  <a href="#" class="pc-link">
+    <span class="pc-micon"><i class="ti ti-info-circle"></i></span>
+    <span class="pc-mtext">About Us</span>
+  </a>
+  <ul class="pc-submenu">
+    <li><a class="pc-link" href="/news-events">News/Event</a></li>
+    <li><a class="pc-link" href="{{route('admin.goldenfamily.index')}}">GoldenABC Family</a></li>
+    <li><a class="pc-link" href="{{ route('admin.calendar.index') }}">Event Calendar</a></li>
+    <li><a class="pc-link" href="/beyond-academics">Beyond Academics</a></li>
+    <li><a class="pc-link" href="{{ route('admin.interestform.index') }}">Form of Interest</a></li>
+  </ul>
+</li>
+
         <li class="pc-item">
-          <a href="https://themewagon.github.io/Mantis-Bootstrap/elements/bc_color.html" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
-            <span class="pc-mtext">Color</span>
-          </a>
-        </li>
-        <li class="pc-item">
-          <a href="https://themewagon.github.io/Mantis-Bootstrap/elements/icon-tabler.html" class="pc-link">
+          <a href="{{route('admin.contact.index')}}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
-            <span class="pc-mtext">Icons</span>
+            <span class="pc-mtext">Contact Us</span>
           </a>
         </li>
 
@@ -103,7 +111,7 @@
       </ul>
       <div class="card text-center">
         <div class="card-body">
-          <img src="../assets/images/img-navbar-card.png" alt="images" class="img-fluid mb-2">
+          <img src="{{ asset('assets/images/img-navbar-card.png') }}" alt="images" class="img-fluid mb-2">
           <h5>Upgrade To Pro</h5>
           <p>To get more features and components</p>
           <a href="https://codedthemes.com/item/berry-bootstrap-5-admin-template/" target="_blank"

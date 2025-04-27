@@ -1,82 +1,141 @@
 @extends('frontend.layout.master')
 @section('container')
 
-<div class="container-fluid mt-5 mb-5 beyondcont">
+<div class="container-fluid p-4 mt-5 mb-5 beyondcont">
     <h2 class="text-center mb-4 beyond">🌟 Beyond Academics</h2>
-    <p class="text-center mb-5 beyondp1">We believe in the holistic development of students. Explore our various non-academic activities that inspire, engage, and empower!</p>
+    <p class="text-center mb-5 beyondp1">We believe in the holistic development of students. Explore our engaging co-curricular activities below!</p>
 
-    <!-- Activity: Sports Week -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🏅 Sports Week</h4>
-        <p class="beyondp1">Our annual sports week brings energy and excitement to the campus with events like races, tug of war, football, and fun games!</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole7.jpg') }}" class="img-fluid" alt="Sports Week 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole7.jpg') }}" class="img-fluid" alt="Sports Week 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole7.jpg') }}" class="img-fluid" alt="Sports Week 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole7.jpg') }}" class="img-fluid" alt="Sports Week 4"></div>
+    <div class="accordion" id="activitiesAccordion">
+
+        <!-- Sports Week -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header " id="headingSports">
+                <button class="accordion-button accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSports" aria-expanded="true" aria-controls="collapseSports">
+                    🏅 Sports Week
+                </button>
+            </h2>
+            <div id="collapseSports" class="accordion-collapse collapse show" aria-labelledby="headingSports" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>Our annual sports week brings energy and excitement to the school with events like races, tug of war, football, and fun games!</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/whole7.jpg') }}" class="img-fluid rounded" alt="Sports Week">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Activity: Field Visit -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🌿 Field Visits</h4>
-        <p class="beyondp1">Students get real-world exposure through educational field visits to farms, museums, and local industries.</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/sci.jpg') }}" class="img-fluid" alt="Field Visit 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/sci.jpg') }}" class="img-fluid" alt="Field Visit 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/sci.jpg') }}" class="img-fluid" alt="Field Visit 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/sci.jpg') }}" class="img-fluid" alt="Field Visit 4"></div>
+        <!-- Field Visit -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingField">
+                <button class="accordion-button collapsed accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseField" aria-expanded="false" aria-controls="collapseField">
+                    🌿 Field Visits
+                </button>
+            </h2>
+            <div id="collapseField" class="accordion-collapse collapse" aria-labelledby="headingField" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>Students get real-world exposure through educational field visits to farms, museums, and local industries.</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/sci.jpg') }}" class="img-fluid rounded" alt="Field Visit">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Activity: Rally -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🚶 Rallies</h4>
-        <p class="beyondp1">We actively engage in community awareness rallies focused on environmental conservation, education, and health awareness.</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/assembly.jpg') }}" class="img-fluid" alt="Rally 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/assembly.jpg') }}" class="img-fluid" alt="Rally 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/assembly.jpg') }}" class="img-fluid" alt="Rally 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/assembly.jpg') }}" class="img-fluid" alt="Rally 4"></div>
+        <!-- Add similar blocks for Rally, Puja, Food Festival, Activation -->
+
+        <!-- Rally -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingRally">
+                <button class="accordion-button collapsed accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRally" aria-expanded="false" aria-controls="collapseRally">
+                    🚶 Rallies
+                </button>
+            </h2>
+            <div id="collapseRally" class="accordion-collapse collapse" aria-labelledby="headingRally" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>We actively engage in community awareness rallies focused on environmental conservation, education, and health awareness.</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/assembly.jpg') }}" class="img-fluid rounded" alt="Rally">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Activity: Puja Celebration -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🪔 Saraswati Pooja</h4>
-        <p class="beyondp1">Festivals like Saraswati Puja are celebrated with devotion and unity, bringing together students, teachers, and parents.</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/saras2.jpg') }}" class="img-fluid" alt="Puja 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/saras2.jpg') }}" class="img-fluid" alt="Puja 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/saras2.jpg') }}" class="img-fluid" alt="Puja 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/saras2.jpg') }}" class="img-fluid" alt="Puja 4"></div>
+        <!-- Saraswati Puja -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingPuja">
+                <button class="accordion-button collapsed accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePuja" aria-expanded="false" aria-controls="collapsePuja">
+                    🪔 Saraswati Pooja
+                </button>
+            </h2>
+            <div id="collapsePuja" class="accordion-collapse collapse" aria-labelledby="headingPuja" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>Festivals like Saraswati Puja are celebrated with devotion and unity, bringing together students, teachers, and parents.</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/saras2.jpg') }}" class="img-fluid rounded" alt="Puja">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Activity: Food Festival -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🍽️ Food Festival</h4>
-        <p class="beyondp1">A vibrant day filled with delicious homemade dishes, snacks, and student-run stalls showcasing cultural variety.</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/foodfeast2.jpg') }}" class="img-fluid" alt="Food Fest 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/foodfeast2.jpg') }}" class="img-fluid" alt="Food Fest 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/foodfeast2.jpg') }}" class="img-fluid" alt="Food Fest 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/foodfeast2.jpg') }}" class="img-fluid" alt="Food Fest 4"></div>
+        <!-- Food Festival -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingFood">
+                <button class="accordion-button collapsed accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">
+                    🍽️ Food Festival
+                </button>
+            </h2>
+            <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>A vibrant day filled with delicious homemade dishes, snacks, and student-run stalls showcasing cultural variety.</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/foodfeast2.jpg') }}" class="img-fluid rounded" alt="Food Festival">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Activity: Activation -->
-    <div class="card mb-4 shadow-sm p-4 beyondcard1">
-        <h4>🔬 Science Activation</h4>
-        <p class="beyondp1">Students showcased science models, participated in quizzes, and explored innovative ideas during our science week activation.</p>
-        <div class="row">
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole1.jpg') }}" class="img-fluid" alt="Activation 1"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole1.jpg') }}" class="img-fluid" alt="Activation 2"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole1.jpg') }}" class="img-fluid" alt="Activation 3"></div>
-            <div class="col-md-6 mb-3"><img src="{{ asset('assets/images/whole1.jpg') }}" class="img-fluid" alt="Activation 4"></div>
+        <!-- Science Activation -->
+        <div class="accordion-item mb-3">
+            <h2 class="accordion-header" id="headingScience">
+                <button class="accordion-button collapsed accordion1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseScience" aria-expanded="false" aria-controls="collapseScience">
+                    🔬 Science Activation
+                </button>
+            </h2>
+            <div id="collapseScience" class="accordion-collapse collapse" aria-labelledby="headingScience" data-bs-parent="#activitiesAccordion">
+                <div class="accordion-body">
+                    <p>Students showcased science models, participated in quizzes, and explored innovative ideas during our science week activation.</p>
+                    <div class="row">
+                        @for($i = 0; $i < 4; $i++)
+                            <div class="col-md-6 mb-3">
+                                <img src="{{ asset('assets/images/whole1.jpg') }}" class="img-fluid rounded" alt="Science Activation">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
+    </div>
 </div>
 
 @endsection

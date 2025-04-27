@@ -44,10 +44,10 @@
 }
 .home{
     color: #e7d31f;
-    margin-right:139px;
+    margin-right:101px;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 21px;
+    font-size: 18px;
     margin-left: 10px;
 }
 .home:hover{
@@ -62,10 +62,9 @@
     color:#e7d31f;
     margin-right:145px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 140px;
     font-weight: bold;
-    font-size: 21px;
-    margin-left: 10px;
+    font-size: 18px;
+    margin-left: 15px;
 }
 .button{
     color: #00440b;
@@ -104,29 +103,30 @@ background-color: #00440b;
 .intro{
     text-align:center;
     color:#00440b;
+    margin-top:-50px;
 }
 .intropara{
     text-align: justify;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .aboutbtn
 {
     background-color: #00440b;
-    height:48px;
-    width:135px;
+    height:31px;
+    width:103px;
 }
 .learn
 {
     color:#d6bc1a;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
+    font-size: 16px;
 }
 .learn:hover{
     color:white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;   
+    font-size: 16px;   
 }
 /*-----------CONATAINER 1 END---------------------------*/
 
@@ -137,6 +137,7 @@ background-color: #00440b;
     margin-bottom: 50px;
     padding:15px;
     background-color: #00440b;
+    margin-top: -40px;
    
 }
 .sliderrow{
@@ -146,13 +147,13 @@ background-color: #00440b;
 
 .sliderbi{
     color: #e7d31f;
-    font-size: 40px;
+    font-size: 25px;
     
 }
 
 .sliderbi:hover{
     color: white;
-    font-size: 40px;
+    font-size: 25px;
 }
 .card1{
     border: 2px solid white;
@@ -160,15 +161,16 @@ background-color: #00440b;
 .foodf{
     color:#e7d31f;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 10px;
-    font-size: 23px;
+    margin-left: 7px;
+    font-size: 16px;
 }
 .foodf:hover{
     color:white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10px;
-    font-size: 23px;
+    font-size: 16px;
 }
+
 .sliderc{
     background-color:#00440b;
 }
@@ -196,13 +198,13 @@ background-color: #00440b;
 .whyh{
     font-weight: bold;
     color:#00440b;font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 29px;
+    font-size: 24px;
     border:2px solid #00440b;
 
 }
 .whyp{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 19px;
+    font-size: 16px;
 }
 .whycard{
     border:2px solid #00440b;
@@ -239,20 +241,21 @@ border: #00440b;
 /*  WHY US CONTAINER END-----------------------------------------------*/
 .subp{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 17px;
+    font-size: 16px;
+    text-align:center;
 
 }
 .laptop
 {
-    font-size: 50px;
-    margin-left: 80px;
+    font-size: 35px;
     color:#00440b;
 
 }
 .laptopp
 {
-    font-size: 19px;
+    font-size: 16px;
     color:#00440b;
+    
     
 }
 
@@ -267,26 +270,26 @@ border: #00440b;
 }
 .fcontainer
 {
-    padding:40px;
+    padding:29px;
 }
 .fcontainer1
 {
-    padding:20px;
+    padding:7px;
 }
 .golden
 {
-    font-size:23px;
+    font-size:16px;
     font-family:Arial, Helvetica, sans-serif;
 }
 .golden1
 {
-    font-size:23px;
+    font-size:16px;
     font-family: Arial, Helvetica, sans-serif;  
 }
 .logoh
 {
 color:#e7d31f;
-font-size: 20px;
+font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
 margin-top:10px;
 }
@@ -294,28 +297,28 @@ margin-top:10px;
 .logop
 {
 color:#e7d31f;
-font-size: 18px;
+font-size: 16px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 margin-top: -16px;
 }
 .col1{
 color:#e7d31f;
-font-size: 26px;
+font-size: 20px;
 font-family: Arial, Helvetica, sans-serif;
-margin-top:110px;
+margin-top:61px;
 
 }
 .col11
 {
 color:#e7d31f;
 font-family: Arial, Helvetica, sans-serif;
-font-size: 20px;
+font-size: 16px;
 }
 .follow{
 color:#e7d31f;
 font-family: Arial, Helvetica, sans-serif;
-font-size: 26px;
-margin-top: 96px;;
+font-size: 20px;
+margin-top: 57px;;
 }
 .followbi
 {

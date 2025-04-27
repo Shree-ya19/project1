@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/goldenfamily.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!-- Bootstrap JS -->
+
+
     <title>Document</title>
 </head>
 <body>

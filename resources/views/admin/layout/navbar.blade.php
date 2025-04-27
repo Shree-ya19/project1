@@ -66,7 +66,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">3:00 AM</span>
@@ -78,7 +78,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-1.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">6:00 PM</span>
@@ -90,7 +90,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-3.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-3.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">2:45 PM</span>
@@ -102,7 +102,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="../assets/images/user/avatar-4.jpg" alt="user-image" class="user-avtar">
+                  <img src="{{ asset('assets/images/user/avatar-4.jpg') }}" alt="user-image" class="user-avtar">
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">9:10 PM</span>
@@ -129,20 +129,27 @@
         data-bs-auto-close="outside"
         aria-expanded="false"
       >
-        <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar">
-        <span>Stebin Ben</span>
+        <img src="{{Auth::user()->image }}" alt="user-image" class="user-avtar">
+        <span>{{ Auth::user()->name }}</span>
       </a>
       <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
         <div class="dropdown-header">
           <div class="d-flex mb-1">
             <div class="flex-shrink-0">
-              <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35">
+              <img src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar wid-35">
             </div>
             <div class="flex-grow-1 ms-3">
               <h6 class="mb-1">Stebin Ben</h6>
               <span>UI/UX Designer</span>
             </div>
-            <a href="#!" class="pc-head-link bg-transparent"><i class="ti ti-power text-danger"></i></a>
+            <form action="{{ route('admin.profile.logout') }}" method="POST">
+    @csrf
+    @method('POST') <!-- Use POST for logout -->
+    <button type="submit" class="pc-head-link bg-transparent">
+    <i class="ti ti-power text-danger"></i>
+    </button>
+</form>
+            
           </div>
         </div>
         <ul class="nav drp-tabs nav-fill nav-tabs" id="mydrpTab" role="tablist">
@@ -179,7 +186,7 @@
               <i class="ti ti-edit-circle"></i>
               <span>Edit Profile</span>
             </a>
-            <a href="#!" class="dropdown-item">
+            <a href="{{ route('admin.profile') }}" class="dropdown-item">
               <i class="ti ti-user"></i>
               <span>View Profile</span>
             </a>
@@ -191,10 +198,15 @@
               <i class="ti ti-wallet"></i>
               <span>Billing</span>
             </a>
-            <a href="#!" class="dropdown-item">
-              <i class="ti ti-power"></i>
-              <span>Logout</span>
-            </a>
+    <form action="{{ route('admin.profile.logout') }}" method="POST">
+    @csrf
+    @method('POST') <!-- Use POST for logout -->
+    <button type="submit" class="dropdown-item btn btn-link">
+        <i class="ti ti-power"></i>
+        <span>Logout</span>
+    </button>
+</form>
+
           </div>
           <div class="tab-pane fade" id="drp-tab-2" role="tabpanel" aria-labelledby="drp-t2" tabindex="0">
             <a href="#!" class="dropdown-item">
