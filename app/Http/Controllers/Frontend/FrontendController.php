@@ -8,6 +8,8 @@ use App\Http\Requests\InterestForm\StoreInterestRequest;
 use App\Models\Calendar;
 use App\Models\Contact;
 use App\Models\InterestForm;
+use App\Models\LatestNews;
+use App\Models\UpcomingEvent;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -22,7 +24,9 @@ class FrontendController extends Controller
     }
     public function news_events()
     {
-        return view("frontend.news_event");
+        $latestNews = LatestNews::all();
+        $upcomingEvents =UpcomingEvent::all();
+        return view("frontend.news_event", ['latestNews' => $latestNews],['upcomingEvents' => $upcomingEvents]);
     }
     public function golden_family()
     {

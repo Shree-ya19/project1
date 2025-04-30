@@ -90,12 +90,9 @@ border: #e7d31f;
 /*-----------------news/event-------------------------------------------*/
 .eventcard
 {
-    border:5px solid #00440b;
+    border:2px solid #00440b;
 }
-.newsh
-{
-    margin-top:90px;
-}
+
 
 /*-------------------------------Contact Us---------------------------*/
 .contacth

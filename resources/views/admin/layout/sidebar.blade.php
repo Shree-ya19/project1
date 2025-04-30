@@ -31,12 +31,24 @@
     <span class="pc-mtext">About Us</span>
   </a>
   <ul class="pc-submenu">
-    <li><a class="pc-link" href="/news-events">News/Event</a></li>
-    <li><a class="pc-link" href="{{route('admin.goldenfamily.index')}}">GoldenABC Family</a></li>
-    <li><a class="pc-link" href="{{ route('admin.calendar.index') }}">Event Calendar</a></li>
-    <li><a class="pc-link" href="/beyond-academics">Beyond Academics</a></li>
-    <li><a class="pc-link" href="{{ route('admin.interestform.index') }}">Form of Interest</a></li>
-  </ul>
+  
+  <li class="dropdown">
+    <a class="pc-link dropdown-toggle" href="javascript:void(0)" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      News/Event
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+      <li><a class="dropdown-item" href="{{route('admin.latestnews.index')}}">Latest News</a></li>
+      <li><a class="dropdown-item" href="{{route('admin.upcomingevents.index')}}">Upcoming Events</a></li>
+    </ul>
+  </li>
+
+  <li><a class="pc-link" href="{{ route('admin.goldenfamily.index') }}">GoldenABC Family</a></li>
+  <li><a class="pc-link" href="{{ route('admin.calendar.index') }}">Event Calendar</a></li>
+  <li><a class="pc-link" href="/beyond-academics">Beyond Academics</a></li>
+  <li><a class="pc-link" href="{{ route('admin.interestform.index') }}">Form of Interest</a></li>
+
+</ul>
+
 </li>
 
         <li class="pc-item">
@@ -121,3 +133,11 @@
     </div>
   </div>
 </nav>
+<!------If your sidebar is closing immediately when clicking the dropdown----------------->
+<script>
+  document.querySelectorAll('.dropdown-toggle').forEach(function(dropdown) {
+    dropdown.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });
+</script>

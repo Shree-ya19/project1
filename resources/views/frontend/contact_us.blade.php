@@ -49,13 +49,13 @@
         <div class="col-md-6 ">
             <div class="card shadow-sm p-4 address">
                 <h4 class="mb-3"><i class="bi bi-building"></i> School Address</h4>
-                <p><strong>Golden ABC Public School</strong><br>
-                Salyanibangala, Neplagunj<br>
+                <p><strong>{{$systemsetting->title}}</strong><br>
+                {{$systemsetting->address}}<br>
                 Banke District<br>
                 Nepal</p>
 
-                <p><strong>Phone:</strong> 9858048498</p>
-                <p><strong>Email:</strong> goldenabc@gmial.com</p>
+                <p><strong>Phone:</strong> {{$systemsetting->phone_number}}</p>
+                <p><strong>Email:</strong> {{$systemsetting->email}}</p>
 
                 <!-- Optional: Google Map Embed -->
                 <div class="mt-4">
