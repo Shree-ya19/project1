@@ -24,7 +24,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -32,7 +32,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -40,7 +40,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -48,7 +48,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -56,7 +56,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -64,7 +64,7 @@ class Calendar extends Model
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('systemSetting','public') : null,
+            set: fn($value) => $value ? $value->store('calendar','public') : null,
         );
 
     }
@@ -72,9 +72,10 @@ class Calendar extends Model
     public function pdf(): Attribute
     {
         return Attribute::make(
-            get: fn(?string $value) => $value ? Storage::disk('public')->url('pdfs/' . $value) : null,
-            set: fn($value) => $value ? $value->store('pdfs', 'public') : null,
+            get: fn(?string $value) => $value ? Storage::disk('public')->url('calendar/' . $value) : null,
+            set: fn($value) => $value ? $value->store('calendar', 'public') : null,
         );
     }
+    
     
 }

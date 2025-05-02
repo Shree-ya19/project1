@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\StoreContactRequest;
 use App\Http\Requests\InterestForm\StoreInterestRequest;
+use App\Models\BeyondAcademic;
 use App\Models\Calendar;
 use App\Models\Contact;
 use App\Models\InterestForm;
@@ -39,7 +40,8 @@ class FrontendController extends Controller
     }
     public function beyond_acedemics()
     {
-        return view("frontend.beyond_acedemics");
+        $beyondacademics = BeyondAcademic::all();
+        return view("frontend.beyond_acedemics",compact('beyondacademics'));
     }
     public function contact_us()
     {

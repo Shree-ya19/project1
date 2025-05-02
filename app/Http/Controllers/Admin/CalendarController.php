@@ -15,21 +15,22 @@ class CalendarController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-         // Retrieve all calendar entries
+{
+    // Retrieve all calendar entries
     $calendars = Calendar::all();
 
     // Pass the data to the view
     return view('admin.calendar.index', compact('calendars'));
-    }
+}
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $calendars=Calendar::get();
-        return view('admin.calendar.create',compact('calendars'));
+        
+        return view('admin.calendar.create');
     }
 
     /**

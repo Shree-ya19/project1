@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\BeyondAcademicController;
+use App\Http\Controllers\Admin\BeyondAcedemicController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -27,3 +29,4 @@ Route::resource('contact',ContactMessageController::class);
 Route::resource('interestform',InterestFormController::class);
 Route::resource('latestnews',LatestNewsController::class);
 Route::resource('upcomingevents',UpcomingEventsController::class);
+Route::resource('beyondacademic',BeyondAcademicController::class);
