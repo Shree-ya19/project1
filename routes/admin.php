@@ -24,7 +24,7 @@ Route::post('logout',[DashboardController::class,'logout'])->name('profile.logou
 
 Route::resource('systemSetting',SystemSettingController::class);
 Route::resource('calendar',CalendarController::class);
-Route::resource('goldenfamily',GoldenAbcMemberController::class);
+Route::resource('goldenmember',GoldenAbcMemberController::class);
 Route::resource('contact',ContactMessageController::class);
 Route::resource('interestform',InterestFormController::class);
 Route::resource('latestnews',LatestNewsController::class);

@@ -42,7 +42,7 @@
     </ul>
   </li>
 
-  <li><a class="pc-link" href="{{ route('admin.goldenfamily.index') }}">GoldenABC Family</a></li>
+  <li><a class="pc-link" href="{{ route('admin.goldenmember.index') }}">GoldenABC Family</a></li>
   <li><a class="pc-link" href="{{ route('admin.calendar.index') }}">Event Calendar</a></li>
   <li><a class="pc-link" href="{{route('admin.beyondacademic.index')}}">Beyond Academics</a></li>
   <li><a class="pc-link" href="{{ route('admin.interestform.index') }}">Form of Interest</a></li>

@@ -8,6 +8,7 @@ use App\Http\Requests\InterestForm\StoreInterestRequest;
 use App\Models\BeyondAcademic;
 use App\Models\Calendar;
 use App\Models\Contact;
+use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
 use App\Models\UpcomingEvent;
@@ -31,8 +32,19 @@ class FrontendController extends Controller
     }
     public function golden_family()
     {
-        return view("frontend.golden_family");
+        $goldenmembers = GoldenMember::all();
+    
+        // Filter the members by role
+        $principal = $goldenmembers->where('role', 'principal');
+        $teachers = $goldenmembers->where('role', 'teacher');
+        $shareholders = $goldenmembers->where('role', 'shareholder');
+        $dedicated = $goldenmembers->where('role', 'other');
+    
+        // Pass the filtered data to the view
+        return view("frontend.golden_family", compact('principal', 'teachers', 'shareholders', 'dedicated'));
     }
+    
+    
     public function event_calander()
     {
         $calendar = Calendar::latest()->first(); // fetch latest calendar data
