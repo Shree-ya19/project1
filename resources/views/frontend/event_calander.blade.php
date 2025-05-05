@@ -1,8 +1,24 @@
 @extends('frontend.layout.master')
 @section('container')
+<style>
+    .pdfbtn{
+        background-color: #00440b;
+        color:#e7d31f;
+        border:2px solid #00440b;
+    }
+    .pdfbtn:hover{
+        background-color: #e7d31f;
+        color:#00440b;
+        border:2px solid #00440b;
+    }
+    .eventh{
+        color:#00440b;
+        margin-top: 80px;
+    }
+</style>
 
 <div class="container-fluid calandercont1  mt-5 mb-5">
-    <h2 class="text-center mb-4 eventh">📅 Event Calendar</h2>
+    <h2 class="text-center mb-4 eventh">Event Calendar</h2>
 
     <div class="card p-4 shadow calandercont2">
         <h4 class="mb-3">View Our Full-Year Calendar</h4>

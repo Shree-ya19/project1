@@ -19,6 +19,12 @@
           <label>UI Components</label>
           <i class="ti ti-dashboard"></i>
         </li>
+        
+        <li class="pc-item">
+          <a href="{{route('admin.admission.index')  }}" class="pc-link">
+            <span class="pc-mtext">Admission</span>
+          </a>
+        </li>
         <li class="pc-item">
           <a href="{{route('admin.systemSetting.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>

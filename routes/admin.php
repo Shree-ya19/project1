@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdmissionController;
 use App\Http\Controllers\Admin\BeyondAcademicController;
 use App\Http\Controllers\Admin\BeyondAcedemicController;
 use App\Http\Controllers\Admin\CalendarController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Admin\InterestFormController;
 use App\Http\Controllers\Admin\LatestNewsController;
 use App\Http\Controllers\Admin\SystemSettingController;
 use App\Http\Controllers\Admin\UpcomingEventsController;
+use App\Http\Controllers\Admin\UserController;
 use App\Models\Calendar;
 use Illuminate\Support\Facades\Route; 
 
@@ -30,3 +32,6 @@ Route::resource('interestform',InterestFormController::class);
 Route::resource('latestnews',LatestNewsController::class);
 Route::resource('upcomingevents',UpcomingEventsController::class);
 Route::resource('beyondacademic',BeyondAcademicController::class);
+
+Route::resource('user',UserController::class);
+Route::resource('admission',AdmissionController::class);

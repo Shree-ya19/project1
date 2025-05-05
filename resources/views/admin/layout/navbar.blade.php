@@ -136,11 +136,11 @@
         <div class="dropdown-header">
           <div class="d-flex mb-1">
             <div class="flex-shrink-0">
-              <img src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar wid-35">
+              <img src="{{ Auth::user()->image }}" alt="user-image" class="user-avtar wid-35">
             </div>
             <div class="flex-grow-1 ms-3">
-              <h6 class="mb-1">Stebin Ben</h6>
-              <span>UI/UX Designer</span>
+              <h6 class="mb-1">{{Auth::user()->name}}</h6>
+              <span>School</span>
             </div>
             <form action="{{ route('admin.profile.logout') }}" method="POST">
     @csrf

@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\StoreContactRequest;
 use App\Http\Requests\InterestForm\StoreInterestRequest;
+use App\Models\Admission;
 use App\Models\BeyondAcademic;
 use App\Models\Calendar;
 use App\Models\Contact;
 use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
+use App\Models\SystemSetting;
 use App\Models\UpcomingEvent;
 use Illuminate\Http\Request;
 
@@ -21,8 +23,10 @@ class FrontendController extends Controller
         return view("frontend.programs");
     }
     public function admission()
-    {
-        return view("frontend.admission");
+    {   
+        $admission = Admission::first(); // Get one record
+        $systemsetting = SystemSetting::first();
+       return view('frontend.admission', compact('admission', 'systemsetting'));
     }
     public function news_events()
     {

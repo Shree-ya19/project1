@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('golden_members', function (Blueprint $table) {
+        Schema::create('admissions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('role'); // 'teacher', 'shareholder', 'principal'
-            $table->text('description');
-            $table->string('image')->nullable(); // for avatar
+            $table->text('explanation');
+            $table->text('requirements');
+            $table->text('process');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('golden_members');
+        Schema::dropIfExists('admissions');
     }
 };
