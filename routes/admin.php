@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BeyondAcademicController;
 use App\Http\Controllers\Admin\BeyondAcedemicController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\ContactMessageController;
+use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GoldenAbcMemberController;
 use App\Http\Controllers\Admin\InterestFormController;
@@ -35,3 +36,4 @@ Route::resource('beyondacademic',BeyondAcademicController::class);
 
 Route::resource('user',UserController::class);
 Route::resource('admission',AdmissionController::class);
+Route::resource('corevalue',CoreValueController::class);

@@ -19,12 +19,28 @@
           <label>UI Components</label>
           <i class="ti ti-dashboard"></i>
         </li>
+
+        <li class="pc-item">
+          <a href="{{route('admin.user.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-person-fill"></i></span>
+            <span class="pc-mtext">Dashboard User</span>
+          </a>
+        </li>
         
         <li class="pc-item">
+          <a href="{{route('admin.corevalue.index')  }}" class="pc-link">
+          <span class="pc-micon"><i class="bi bi-bookmark-heart-fill"></i></span>
+            <span class="pc-mtext">Core Values</span>
+          </a>
+        </li>
+         
+        <li class="pc-item">
           <a href="{{route('admin.admission.index')  }}" class="pc-link">
+          <span class="pc-micon"><i class="ti ti-typography"></i></span>
             <span class="pc-mtext">Admission</span>
           </a>
         </li>
+
         <li class="pc-item">
           <a href="{{route('admin.systemSetting.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>

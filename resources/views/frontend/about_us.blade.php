@@ -11,7 +11,7 @@
     .main-heading {
         color: #00440b; /* dark green */
         font-weight: bold;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     .sub-heading {
         color: #006400; /* a slightly lighter green */

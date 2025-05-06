@@ -42,12 +42,13 @@
 
     /* Core Values Heading */
     .gholdenfamp1 {
-        font-size: 2.5rem;
+        font-size: 35px;
         text-align: center;
         font-weight: bold;
         color: #00440b;  /* Your specific green color */
-        margin-top: 70px;  /* Push it below the navbar */
-        margin-bottom: 30px;
+        margin-top: 61px;  /* Push it below the navbar */
+        margin-bottom: -20px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .timeline-content h4 {
@@ -64,9 +65,10 @@
     }
 
     .goldenfamp2 {
-        font-size: 1.1rem;
-        color: #777;
+        font-size: 20px;
+        color: #00440b;
         margin-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     /* Timeline Item Spacing */
@@ -83,22 +85,27 @@
             padding-left: 20px;
         }
     }
+    .int{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+    }
 </style>
 
 <h2 class="gholdenfamp1  p-1">Our Core Values</h2>
 
-<div class="container goldenfamcont1 mt-4 mb-5">
+<div class="container-fluid goldenfamcont1 mt-4 mb-5">
     <div class="timeline">
-
+@foreach($corevalues as $corevalue)
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h4>Integrity</h4>
-                <p class="goldenfamp2">At Golden Abs, we uphold honesty and transparency in everything we do. We believe in acting with sincerity and maintaining the highest ethical standards. Our commitment to integrity ensures trust and respect within our school community.</p>
+                <h4 class="'int">{{$corevalue->title}}</h4>
+                <p class="goldenfamp2">{{$corevalue->describe}}</p>
             </div>
         </div>
+        @endforeach
 
-        <div class="timeline-item">
+      <!--  <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
                 <h4>Innovation</h4>
@@ -128,7 +135,7 @@
                 <h4>Compassion</h4>
                 <p class="goldenfamp2">We show empathy and care for everyone in our community. Golden Abs is dedicated to building an inclusive environment where students, staff, and parents feel valued, respected, and supported at all times.</p>
             </div>
-        </div>
+        </div>-->
 
     </div>
 </div>

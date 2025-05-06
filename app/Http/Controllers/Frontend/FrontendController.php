@@ -9,6 +9,7 @@ use App\Models\Admission;
 use App\Models\BeyondAcademic;
 use App\Models\Calendar;
 use App\Models\Contact;
+use App\Models\CoreValue;
 use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
@@ -91,7 +92,8 @@ class FrontendController extends Controller
     
     public function core_values()
     {
-        return view("frontend.core_values");
+        $corevalues=CoreValue::all();
+        return view("frontend.core_values", compact('corevalues'));
     }
   
     public function student_login()

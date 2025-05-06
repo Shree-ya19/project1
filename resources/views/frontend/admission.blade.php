@@ -12,6 +12,7 @@
     }
     .add {
         color: #00440b;
+        margin-bottom:-20px;
     }
     .addbtn {
         background-color: #00440b;
@@ -23,9 +24,12 @@
         color: #00440b;
         border: 2px solid #00440b;
     }
+    .stron{
+        color:#00440b;
+    }
 </style>
 
-<div class="container-fluid p-3">
+<div class="container-fluid p-3 addcont">
     <h2 class="text-center p-5 add"><i class="bi bi-journal-check"></i> Admission Information</h2>
 
     <div class="row justify-content-center">
@@ -56,8 +60,8 @@
 
                 <hr>
                 <div class="text-center mt-4">
-                    <p>For any inquiries or assistance, contact us at <strong>{{$systemsetting->phone_number}}</strong> or email <strong>{{$systemsetting->email}}</strong>.</p>
-                    <a href="contact.html" class="btn btn-primary addbtn">Contact for Admission</a>
+                    <p>For any inquiries or assistance, contact us at <strong class="stron">{{$systemsetting->phone_number}}</strong> or email <strong class="stron">{{$systemsetting->email}}</strong>.</p>
+                    <a href="{{route('contact_us')}}" class="btn btn-primary addbtn">Contact for Admission</a>
                 </div>
             </div>
         </div>
