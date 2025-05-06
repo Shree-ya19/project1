@@ -36,42 +36,17 @@ Golden ABC School also prioritizes character building, discipline, and moral val
 <!--SLIDE START------------------------------------------------------------------------------>
 <div class="container-fluid slidercont">
   <div class="row justify-content-center sliderrow">
+    @foreach($features as $feature)
     <div class="col-md-3 d-flex justify-content-center">
       <div class="card1 sliderc">
-        <img src="{{ asset('assets/images/foodfeast1.jpg') }}" class="card-img-top" alt="...">
+        <img src="{{ $feature->image}}" class="card-img-top" alt="..." >
         <div class="card-body text-center">
-          <a href="{{ route('event_calander') }}" class="arrow"><i class="bi bi-arrow-right-square-fill sliderbi"></i></a>
-          <span class="foodf">Event Calander</span>
+          <a href="{{ route($feature->route_name) }}" class="arrow"><i class="{{$feature->icon}}  sliderbi"></i></a>
+          <span class="foodf">{{$feature->title}}</span>
         </div>
       </div>
     </div>
-    <div class="col-md-3 d-flex justify-content-center">
-      <div class="card1 sliderc">
-        <img src="{{ asset('assets/images/foodfeast1.jpg') }}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <a href="{{ route('news_event') }}" class="arrow"><i class="bi bi-arrow-right-square-fill sliderbi"></i></a>
-          <span class="foodf">News & Events</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex justify-content-center">
-      <div class="card1 sliderc">
-        <img src="{{ asset('assets/images/sci.jpg') }}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <a href="{{ route('core_values') }}" class=""><i class="bi bi-arrow-right-square-fill sliderbi"></i></a>
-          <span class="foodf">Core Values</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 d-flex justify-content-center">
-      <div class="card1 sliderc">
-        <img src="{{ asset('assets/images/saras7.jpg') }}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <a href="{{ route('beyond_acedemics') }}" class=""><i class="bi bi-arrow-right-square-fill sliderbi"></i></a>
-          <span class="foodf">Beyond Academics</span>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
 </div>
 

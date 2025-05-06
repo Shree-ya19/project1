@@ -10,11 +10,13 @@ use App\Models\BeyondAcademic;
 use App\Models\Calendar;
 use App\Models\Contact;
 use App\Models\CoreValue;
+use App\Models\Feature;
 use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
 use App\Models\SystemSetting;
 use App\Models\UpcomingEvent;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -106,7 +108,8 @@ class FrontendController extends Controller
     }
     public function home()
     {
-        return view("welcome");
+        $features=Feature::limit(4)->get();
+        return view("welcome",compact('features'));
     }
     public function form_of_interest()
     {
@@ -115,5 +118,9 @@ class FrontendController extends Controller
     public function student_register()
     {
         return view("frontend.student_register");
+    }
+    public function gallery()
+    {
+        return view("frontend.gallery");
     }
 }

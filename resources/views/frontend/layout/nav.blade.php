@@ -24,6 +24,8 @@
             <li><a class="dropdown-item home1" href="{{ route('event_calander') }}">Event Calander</a></li>
             <li><a class="dropdown-item home1" href="{{ route('beyond_acedemics') }}">Beyond Acedemics</a></li>
             <li><a class="dropdown-item home1" href="{{ route('form_of_interest') }}">Form of Interest</a></li>
+            <li><a class="dropdown-item home1" href="{{ route('core_values') }}">Core Values</a></li>
+            <li><a class="dropdown-item home1" href="{{ route('gallery') }}">Gallery</a></li>
             
           </ul>
         </li>

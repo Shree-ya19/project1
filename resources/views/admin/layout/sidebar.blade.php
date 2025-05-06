@@ -26,6 +26,13 @@
             <span class="pc-mtext">Dashboard User</span>
           </a>
         </li>
+
+        <li class="pc-item">
+          <a href="{{route('admin.feature.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-images"></i></span>
+            <span class="pc-mtext">Features(Home)</span>
+          </a>
+        </li>
         
         <li class="pc-item">
           <a href="{{route('admin.corevalue.index')  }}" class="pc-link">

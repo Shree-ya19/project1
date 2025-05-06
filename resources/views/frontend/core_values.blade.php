@@ -104,39 +104,6 @@
             </div>
         </div>
         @endforeach
-
-      <!--  <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h4>Innovation</h4>
-                <p class="goldenfamp2">We constantly look for new and better ways to grow and improve. Golden Abs embraces creative thinking, technology, and fresh ideas to foster an environment where innovation leads to transformative learning experiences for our students.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h4>Excellence</h4>
-                <p class="goldenfamp2">We strive for high standards and quality in everything we do. Our pursuit of excellence drives us to deliver exceptional educational outcomes and cultivate an environment that nurtures the full potential of each student.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h4>Collaboration</h4>
-                <p class="goldenfamp2">We believe in working together to achieve greater success. Golden Abs encourages teamwork and collaboration among students, teachers, and the entire school community to reach shared goals and foster mutual support.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h4>Compassion</h4>
-                <p class="goldenfamp2">We show empathy and care for everyone in our community. Golden Abs is dedicated to building an inclusive environment where students, staff, and parents feel valued, respected, and supported at all times.</p>
-            </div>
-        </div>-->
-
     </div>
 </div>
 
