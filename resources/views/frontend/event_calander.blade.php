@@ -29,7 +29,7 @@
         <a href="{{ $calendar->pdf }}" target="_blank" class="btn btn-primary mb-4 pdfbtn">
             Open Calendar as PDF
         </a>
-
+    
         <!-- Display calendar images -->
         <div class="calendar-images mt-4">
             <img src="{{ $calendar->img1 }}" class="img-fluid mb-3" alt="Calendar Page 1">

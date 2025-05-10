@@ -30,6 +30,8 @@
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" id="main-style-link" >
 <link rel="stylesheet" href="{{ asset('assets/css/style-preset.css') }}" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.css">
+
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->
@@ -99,6 +101,20 @@
   
   
   <script>font_change("Public-Sans");</script>
+  @stack('scripts')
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: '{{ route("upload") }}?_token={{ csrf_token() }}'
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+            </script>
   
     
 

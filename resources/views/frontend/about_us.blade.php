@@ -1,77 +1,151 @@
-@extends('frontend.layout.master')
-@section('container')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Our School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<style>
-    .section-card {
-        border: 2px solid #00440b; /* dark green border */
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        padding: 30px;
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
     }
-    .main-heading {
-        color: #00440b; /* dark green */
-        font-weight: bold;
-        margin-top: 30px;
-    }
-    .sub-heading {
-        color: #006400; /* a slightly lighter green */
-        font-weight: bold;
-    }
-    .text {
-        font-size: 16px;
-        color: black;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-</style>
 
-<div class="container-fluid p-5">
-    <h2 class="text-center main-heading"><i class="bi bi-info-circle"></i> About Golden ABC Public School</h2>
+    .carousel-item video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
 
-    <!-- About the School -->
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="card section-card">
-                <h4 class="mb-3 sub-heading">About Our School</h4>
-                <p class="text">
-                    Golden ABC Public School is dedicated to nurturing young minds with knowledge, creativity, and discipline. 
-                    Our mission is to provide a holistic education that fosters academic excellence, character development, 
-                    and a lifelong love of learning. We believe every child has the potential to shine and succeed in a supportive and inspiring environment.
-                </p>
-            </div>
+    .btn-home {
+      background-color: #00440b;
+      color: #e7d31f;
+      padding: 10px 25px;
+      font-size: 1rem;
+      display: inline-block;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-home:hover {
+      background-color: #003308;
+      color: #e7d31f;
+    }
+
+    .logo-top-left {
+      background-color: #00440b;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-top-left img {
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .principal-message {
+      background-color: #00440b;
+      padding: 3rem;
+      border-left: 8px solid #e7d31f;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      color: #e7d31f;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .section-box {
+      background-color: #00440b;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+      color: #e7d31f;
+      font-family: Arial, Helvetica, sans-serif;
+      border-left: 6px solid #e7d31f;
+    }
+
+    .principal-img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .principal-message {
+        flex-direction: column;
+        text-align: center;
+      }
+      .principal-img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Fullscreen Carousel with Video -->
+@foreach($abouts as $about)
+<div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active position-relative">
+      <video autoplay muted loop playsinline>
+        <source src="{{ $about->video }}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Top-left logo -->
+      <div class="position-absolute top-0 start-0 m-4 z-3">
+        <div class="logo-top-left">
+          <img src="{{ $systemsetting->logo }}" alt="School Logo">
         </div>
-    </div>
+      </div>
 
-    <!-- Message from the Principal -->
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="card section-card">
-                <h4 class="mb-3 sub-heading">Message from the Principal</h4>
-                <p class="text">
-                    Dear Parents and Students,<br><br>
-                    At Golden ABC Public School, we are committed to creating a nurturing environment where students are empowered to grow academically, socially, and emotionally.
-                    We strive to provide a balanced education that prepares students for the challenges of the future. 
-                    Together with our dedicated staff, I am confident that we will continue to achieve great milestones.
-                    <br><br>
-                    Warm regards,<br>
-                    <strong>Mr. Ram Sharma</strong><br>
-                    Principal, Golden ABC Public School
-                </p>
-            </div>
-        </div>
+      <!-- Back to Home button -->
+      <a href="/" class="btn btn-home position-absolute bottom-0 end-0 m-4 z-3">
+        Back to Home
+      </a>
     </div>
-
-    <!-- Video Section -->
-    <div class="row mb-5">
-        <div class="col-12">
-            <div class="card section-card text-center">
-                <h4 class="mb-4 sub-heading">A Glimpse of Our School</h4>
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/your_video_id" title="School Video" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  </div>
 </div>
 
-@endsection
+<!-- Principal's Message -->
+<div class="container-fluid">
+  <div class="principal-message">
+    
+    <!-- Principal Image -->
+    <div>
+      <img src="{{ $about->image }}" alt="Principal" class="principal-img">
+    </div>
+
+    <!-- Message Text -->
+    <div>
+      <h3>Message from the Principal</h3>
+      <p>{{ $about->message }}</p>
+    </div>
+  </div>
+
+  <!-- Our History -->
+  <div class="section-box">
+    <h4>Our History</h4>
+    <p>{{ $about->history }}</p>
+  </div>
+
+  <!-- Educational Philosophy -->
+  <div class="section-box">
+    <h4>Our Educational Philosophy</h4>
+    <p>{{ $about->philosophy }}</p>
+  </div>
+</div>
+@endforeach
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

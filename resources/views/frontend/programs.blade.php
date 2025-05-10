@@ -3,28 +3,18 @@
 
 <style>
     .program-section {
-       border:4px solid #00440b;  
-        
+        border: 4px solid #00440b;
     }
 
-    .program-title {
-        color:#00440b;
-    
-    }
+    .program-title,
     .program-title1 {
-        color:#00440b;
-       
-    }
-    .program-card
-    {
-        border:2px solid #e7d31f;
-    }
-    .highlight-card
-    {
-        border:2px solid #e7d31f;
+        color: #00440b;
     }
 
-
+    .program-card,
+    .highlight-card {
+        border: 2px solid #e7d31f;
+    }
 
     .highlight-title {
         color: #00440b;
@@ -41,11 +31,11 @@
 
     <!-- Pre-Primary Section -->
     <div class="card shadow-sm mb-5 p-4 program-section">
-        <h4 class="mb-3 program-title"> Pre-Primary (Nursery to UKG)</h4>
+        <h4 class="mb-3 program-title">Pre-Primary (Nursery to UKG)</h4>
         <div class="row">
             @foreach(['Nursery', 'LKG', 'UKG'] as $class)
             <div class="col-md-4 mb-4">
-                <div class="card h-100  program-card shadow-sm">
+                <div class="card h-100 program-card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title highlight-title">{{ $class }}</h5>
                         <ul>
@@ -55,27 +45,24 @@
                             <li>Creative Play</li>
                             <li>Group Activities</li>
                         </ul>
+                        <div class="mt-3">
+                            <h6 class="highlight-title">Program Highlights</h6>
+                            <ul>
+                                <li>Interactive learning for {{ $class }}</li>
+                                <li>Play-based activities</li>
+                                <li>Basic life skills</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        <!-- Program Highlights -->
-        <div class="card  highlight-card mb-3">
-            <div class="card-body">
-                <h5 class="card-title highlight-title">Program Highlights</h5>
-                <ul>
-                    <li>Interactive learning experiences</li>
-                    <li>Fun activities and games</li>
-                    <li>Early childhood development</li>
-                </ul>
-            </div>
-        </div>
     </div>
-<hr>
+
     <!-- Primary Section -->
     <div class="card shadow-sm mb-5 p-4 program-section">
-        <h4 class="mb-3 program-title"> Primary (Grade 1 to 5)</h4>
+        <h4 class="mb-3 program-title">Primary (Grade 1 to 5)</h4>
         <div class="row">
             @for($i = 1; $i <= 5; $i++)
             <div class="col-md-4 mb-4">
@@ -92,27 +79,24 @@
                             <li>Art & Craft</li>
                             <li>Music</li>
                         </ul>
+                        <div class="mt-3">
+                            <h6 class="highlight-title">Program Highlights</h6>
+                            <ul>
+                                <li>Activity-based learning in Grade {{ $i }}</li>
+                                <li>Hands-on creativity</li>
+                                <li>Value-based education</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             @endfor
         </div>
-        <!-- Program Highlights -->
-        <div class="card  highlight-card mb-3">
-            <div class="card-body">
-                <h5 class="card-title highlight-title">Program Highlights</h5>
-                <ul>
-                    <li>Activity-based learning</li>
-                    <li>Focus on developing creativity</li>
-                    <li>Regular outdoor play and group activities</li>
-                </ul>
-            </div>
-        </div>
     </div>
-<hr>
+
     <!-- Lower Secondary Section -->
     <div class="card shadow-sm mb-5 p-4 program-section">
-        <h4 class="mb-3 program-title"> Lower Secondary (Grade 6 to 8)</h4>
+        <h4 class="mb-3 program-title">Lower Secondary (Grade 6 to 8)</h4>
         <div class="row">
             @for($i = 6; $i <= 8; $i++)
             <div class="col-md-4 mb-4">
@@ -130,27 +114,24 @@
                             <li>Music</li>
                             <li>Art</li>
                         </ul>
+                        <div class="mt-3">
+                            <h6 class="highlight-title">Program Highlights</h6>
+                            <ul>
+                                <li>Research projects and presentations</li>
+                                <li>Technology integration</li>
+                                <li>Exploratory field visits</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             @endfor
         </div>
-        <!-- Program Highlights -->
-        <div class="card  highlight-card mb-3">
-            <div class="card-body">
-                <h5 class="card-title highlight-title">Program Highlights</h5>
-                <ul>
-                    <li>Advanced projects and presentations</li>
-                    <li>Introduction to technology and programming</li>
-                    <li>Hands-on lab work and field trips</li>
-                </ul>
-            </div>
-        </div>
     </div>
-<hr>
+
     <!-- Secondary Section -->
     <div class="card shadow-sm mb-5 p-4 program-section">
-        <h4 class="mb-3 program-title"> Secondary (Grade 9 & 10)</h4>
+        <h4 class="mb-3 program-title">Secondary (Grade 9 & 10)</h4>
         <div class="row">
             @for($i = 9; $i <= 10; $i++)
             <div class="col-md-6 mb-4">
@@ -167,24 +148,20 @@
                             <li>Computer Science</li>
                             <li>Additional Math</li>
                         </ul>
+                        <div class="mt-3">
+                            <h6 class="highlight-title">Program Highlights</h6>
+                            <ul>
+                                <li>Preparation for SEE exams</li>
+                                <li>Career-focused activities</li>
+                                <li>Mentorship and guidance for Grade {{ $i }}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             @endfor
         </div>
-        <!-- Program Highlights -->
-        <div class="card  highlight-card mb-3">
-            <div class="card-body">
-                <h5 class="card-title highlight-title">Program Highlights</h5>
-                <ul>
-                    <li>Focused preparation for board exams</li>
-                    <li>In-depth subject learning</li>
-                    <li>Career orientation and guidance</li>
-                </ul>
-            </div>
-        </div>
     </div>
-
 </div>
 
 @endsection

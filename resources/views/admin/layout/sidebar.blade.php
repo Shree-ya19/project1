@@ -33,6 +33,23 @@
             <span class="pc-mtext">Features(Home)</span>
           </a>
         </li>
+        <li class="pc-item">
+          <a href="{{route('admin.about.index')  }}" class="pc-link">
+          <span class="pc-micon"><i class="bi bi-archive"></i></span>
+            <span class="pc-mtext">About Page</span>
+          </a>
+        </li>
+
+       <li class="dropdown">
+    <a class="pc-link dropdown-toggle" href="javascript:void(0)" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="pc-micon"><i class="bi bi-bookmark-heart-fill"></i></span>
+    Program
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+      <li><a class="dropdown-item" href="{{route('admin.level.index')}}">Level</a></li>
+      <li><a class="dropdown-item" href="{{route('admin.subject.index')}}">Subject</a></li>
+    </ul>
+  </li>
         
         <li class="pc-item">
           <a href="{{route('admin.corevalue.index')  }}" class="pc-link">

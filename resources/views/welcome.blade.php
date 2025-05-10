@@ -13,7 +13,7 @@
 
 <!----CONTAINER1 START---------------------------------------------------------------------------->
 <div class="container container1">
-     <h1 class="intro">About Our School</h1>
+     <h1 class="intro">Since 2060</h1>
       <p class="intropara">Golden ABC School is a prestigious institution dedicated to providing quality education and nurturing young minds for a brighter future. With a strong emphasis on academic excellence, the school follows a well-structured curriculum designed to develop critical thinking, problem-solving skills, and creativity.
 
 In addition to academics, Golden ABC School offers a wide range of extracurricular activities, including sports, music, arts, and leadership programs, ensuring the all-round development of students. The school organizes various events such as annual functions, cultural celebrations, and inter-school competitions to encourage talent and teamwork.

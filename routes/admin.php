@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdmissionController;
 use App\Http\Controllers\Admin\BeyondAcademicController;
 use App\Http\Controllers\Admin\BeyondAcedemicController;
@@ -11,6 +12,9 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\GoldenAbcMemberController;
 use App\Http\Controllers\Admin\InterestFormController;
 use App\Http\Controllers\Admin\LatestNewsController;
+use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\SystemSettingController;
 use App\Http\Controllers\Admin\UpcomingEventsController;
 use App\Http\Controllers\Admin\UserController;
@@ -39,3 +43,6 @@ Route::resource('user',UserController::class);
 Route::resource('admission',AdmissionController::class);
 Route::resource('corevalue',CoreValueController::class);
 Route::resource('feature',FeatureController::class);
+Route::resource('level',LevelController::class);
+Route::resource('subject',SubjectController::class);
+Route::resource('about',AboutController::class);

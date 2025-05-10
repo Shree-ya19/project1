@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\StoreContactRequest;
 use App\Http\Requests\InterestForm\StoreInterestRequest;
+use App\Models\About;
 use App\Models\Admission;
 use App\Models\BeyondAcademic;
 use App\Models\Calendar;
@@ -55,6 +56,7 @@ class FrontendController extends Controller
     public function event_calander()
     {
         $calendar = Calendar::latest()->first(); // fetch latest calendar data
+        
     return view("frontend.event_calander", compact('calendar'));
     }
     public function beyond_acedemics()
@@ -104,7 +106,9 @@ class FrontendController extends Controller
     }
     public function about_us()
     {
-        return view("frontend.about_us");
+        $abouts=About::all();
+        $systemsetting = SystemSetting::first();
+        return view("frontend.about_us",compact('abouts','systemsetting'));
     }
     public function home()
     {
