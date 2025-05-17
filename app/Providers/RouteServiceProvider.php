@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Laravel\Sanctum\Sanctum;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -37,6 +38,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::middleware('web','auth:sanctum') ->as('admin.') ->prefix('admin') ->group(base_path('routes/admin.php')); 
+        
+            Route::middleware('web','auth:customer')->as('customer')->prefix('customer')->group(base_path('routes/customer.php'));
+        
+        
         });
     }
 }

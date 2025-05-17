@@ -15,28 +15,36 @@
     <div class="form-side">
         <div class="form-box">
             <h2 style="color:#00440b;">Register</h2>
-            <form action="{{ route('student_register') }}" method="POST">
-                @csrf
+            @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+            <form action="{{ route('customer.register') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
 
-                <input type="email" name="email" class="form-control" placeholder="Email address" required>
+    <input type="email" name="email" class="form-control" placeholder="Email address" required>
 
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
+    <input type="password" name="password" class="form-control" placeholder="Password" required>
 
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
 
-                <select name="role" class="form-select" required>
-                    <option selected disabled>Select your role</option>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
 
-                <button type="submit" class="btn-login mt-2">Register</button>
-            </form>
+    <!-- ✅ Image Upload Field -->
+    <input type="file" name="image" class="form-control" accept="image/*">
+
+    <button type="submit" class="btn-login mt-2">Register</button>
+</form>
+
 
             <div class="register-link">
-                <p>Already have an account? <a href="{{ route('student_login') }}"><span style="color:#00440b;">Login</span></a></p>
+                <p>Already have an account? <a href="{{ route('customer.loginPage') }}"><span style="color:#00440b;">Login</span></a></p>
             </div>
         </div>
     </div>

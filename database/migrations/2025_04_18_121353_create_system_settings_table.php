@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('system_settings', function (Blueprint $table) {
             $table->id(); 
 $table->string('title'); 
+$table->text('caption'); 
+$table->string('whatsapp_number'); 
 $table->string('phone_number'); 
 $table->string('email'); 
 $table->string('address'); 

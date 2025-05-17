@@ -1,31 +1,110 @@
 @extends('frontend.layout.master')
 @section('container')
 <!----SLIDE START---------------------------------------------------------------------------->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<style>
+  .school-carousel .carousel-item {
+    height: 80vh;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .school-carousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Overlay behind the caption, does NOT affect position */
+  .carousel-overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* You can increase to 0.5 or 0.6 if needed */
+    z-index: 1;
+  }
+
+  .school-carousel .carousel-caption {
+    bottom: 20%;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .school-carousel .carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .school-carousel .carousel-caption p {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .school-carousel .carousel-caption h1 {
+      font-size: 2rem;
+    }
+
+    .school-carousel .carousel-caption p {
+      font-size: 1rem;
+    }
+
+    .school-carousel .carousel-item {
+      height: 60vh;
+    }
+  }
+
+  .learn {
+    background-color: #00440b;
+    color: #e7d31f;
+    border: 2px solid #00440b;
+  }
+
+  .learn:hover {
+    background-color: #00440b;
+    color: #e7d31f;
+    border: 2px solid #00440b;
+  }
+</style>
+
+<!-- Carousel -->
+<div id="schoolCarousel" class="carousel slide school-carousel" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{ asset('assets\images\golden abc.png') }}" class="d-block w-100" alt="...">
-    </div>
+    @foreach($welcomes as $welcome)
+    <div class="carousel-item active position-relative">
+      <img src="{{ $welcome->image }}" class="d-block w-100" alt="School Assembly">
+
+      <!-- ✅ Non-intrusive overlay -->
+      <div class="carousel-overlay"></div>
+
+      <!-- Caption -->
+      <div class="carousel-caption text-white">
+        <h1>{{$welcome->title}}</h1>
+        <p>{{$welcome->caption}}</p>
+        <a href="{{ route('about_us') }}" class="btn btn-warning mt-3 learn">Learn More</a>
+      </div>
     </div>
   </div>
+</div>
+
+
+
 
 <!----SLIDE END---------------------------------------------------------------------------->
 
 <!----CONTAINER1 START---------------------------------------------------------------------------->
 <div class="container container1">
      <h1 class="intro">Since 2060</h1>
-      <p class="intropara">Golden ABC School is a prestigious institution dedicated to providing quality education and nurturing young minds for a brighter future. With a strong emphasis on academic excellence, the school follows a well-structured curriculum designed to develop critical thinking, problem-solving skills, and creativity.
+  <p class="intropara">{!! $welcome->since!!}</p>
 
-In addition to academics, Golden ABC School offers a wide range of extracurricular activities, including sports, music, arts, and leadership programs, ensuring the all-round development of students. The school organizes various events such as annual functions, cultural celebrations, and inter-school competitions to encourage talent and teamwork.
-
-The dedicated faculty members focus on personalized learning, ensuring that each student receives the necessary guidance and support. Equipped with modern classrooms, a well-stocked library, and advanced science and computer labs, the school provides a stimulating environment for learning.
-
-Golden ABC School also prioritizes character building, discipline, and moral values, shaping students into responsible global citizens. Through a blend of academics, co-curricular activities, and ethical learning, the school continues to inspire young learners to achieve success in their academic and personal journeys.</p>
-<form action="{{ route('about_us') }}" method="GET">
-    <button type="submit" class="aboutbtn">
-        <span class="learn">Learn More</span>
-    </button>
-</form>
 
 </div>
   </div>
@@ -59,7 +138,7 @@ Golden ABC School also prioritizes character building, discipline, and moral val
     Why GOLDEN ABC ACADEMY BANKE HIGH SCHOOL?
   </div>
   <div class="card-body">
-    <p class="card-text whyp">Golden ABC Academy Banke High School stands out as a premier institution committed to academic excellence, character development, and holistic growth. With a strong emphasis on quality education, experienced faculty, and a student-centered approach, the school nurtures young minds to become confident and responsible individuals. Its well-structured curriculum integrates modern teaching methodologies, extracurricular activities, and values-based learning, ensuring students excel both academically and socially. The school also fosters a supportive and inclusive environment, encouraging creativity, leadership, and innovation. By choosing Golden ABC Academy, students receive not just an education but a foundation for a successful future.</p>
+    <p class="card-text whyp">{!! $welcome->why!!}</p>
     <!--<a href="#" class="btn btn-primary whybtn"><span class="whyp1">About Us</span></a>-->
   <div class="container subcont">
   <div class="row subrow">
@@ -80,6 +159,7 @@ Golden ABC School also prioritizes character building, discipline, and moral val
   </div>
 </div>
 </div>
+@endforeach
 </div>
 </div>
 <!--WHY US CONTAINER ENDS-------------------------------------------------------------------------->

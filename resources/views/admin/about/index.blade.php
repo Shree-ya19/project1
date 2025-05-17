@@ -12,7 +12,7 @@
             <tr>
                 <th>#</th>
                 <th>Video</th>
-                <th>image</th>
+                <th>Principle Image</th>
                 <th>Actions</th>
             </tr>
         </thead>

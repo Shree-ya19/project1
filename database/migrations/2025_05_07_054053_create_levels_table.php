@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('level_id')->nullable()->constrained('levels')->cascadeOnDelete();
             $table->string('slug');
             $table->string('position');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

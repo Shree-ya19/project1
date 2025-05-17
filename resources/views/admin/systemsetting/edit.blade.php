@@ -21,6 +21,11 @@
         </div>
 
         <div class="mb-3">
+            <label for="title" class="form-label">Caption</label>
+            <input type="text" class="form-control" id="editor" name="title" value="{{ old('title', $systemSetting->caption) }}" required>
+        </div>
+
+        <div class="mb-3">
             <label for="phone_number" class="form-label">Phone Number</label>
             <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ old('phone_number', $systemSetting->phone_number) }}" required>
         </div>

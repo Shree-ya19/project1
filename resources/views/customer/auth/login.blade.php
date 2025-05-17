@@ -5,38 +5,39 @@
     <div class="welcome-side">
         <div class="welcome-content">
             <div class="icon-circle">
-                <i class="bi bi-person-plus-fill"></i>
+                <i class="bi bi-mortarboard-fill"></i>
             </div>
-            <h1>Join Us Today!</h1>
-            <p>Create your school account to get started with results, announcements, and more!</p>
+            <h1>Welcome Back!</h1>
+            <p>Log in to access your school dashboard, results, announcements, and more!</p>
         </div>
     </div>
 
     <div class="form-side">
         <div class="form-box">
-            <h2 style="color:#00440b;">Register</h2>
-            <form action="{{ route('student_register') }}" method="POST">
+            <h2 style="color:#00440b;">Login</h2>
+           @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+            <form action="{{ route('customer.login') }}" method="POST">
                 @csrf
-
-                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
 
                 <input type="email" name="email" class="form-control" placeholder="Email address" required>
 
                 <input type="password" name="password" class="form-control" placeholder="Password" required>
 
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+            
 
-                <select name="role" class="form-select" required>
-                    <option selected disabled>Select your role</option>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
-
-                <button type="submit" class="btn-login mt-2">Register</button>
+                <button type="submit" class="btn-login mt-2">Login</button>
             </form>
 
             <div class="register-link">
-                <p>Already have an account? <a href="{{ route('student_login') }}"><span style="color:#00440b;">Login</span></a></p>
+                <p>Don't have an account? <a href="{{ route('customer.register') }}"><span style="color:#00440b;">Register</span></a></p>
             </div>
         </div>
     </div>
@@ -158,42 +159,41 @@
     .register-link a:hover {
         text-decoration: underline;
     }
-
     @media (max-width: 768px) {
-        .login-container {
-            flex-direction: column;
-            height: auto;
-        }
-
-        .welcome-side,
-        .form-side {
-            flex: none;
-            width: 100%;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        .form-box {
-            max-width: 100%;
-        }
-
-        .icon-circle {
-            margin-bottom: 10px;
-        }
-
-        .welcome-side h1 {
-            font-size: 24px;
-        }
-
-        .welcome-side p {
-            font-size: 14px;
-        }
-
-        .btn-login {
-            font-size: 16px;
-            padding: 10px;
-        }
+    .login-container {
+        flex-direction: column;
+        height: auto;
     }
+
+    .welcome-side,
+    .form-side {
+        flex: none;
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .form-box {
+        max-width: 100%;
+    }
+
+    .icon-circle {
+        margin-bottom: 10px;
+    }
+
+    .welcome-side h1 {
+        font-size: 24px;
+    }
+
+    .welcome-side p {
+        font-size: 14px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
 </style>
 
 @endsection

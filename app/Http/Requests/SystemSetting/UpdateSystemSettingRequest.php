@@ -23,6 +23,7 @@ class UpdateSystemSettingRequest extends FormRequest
     {
         return [
            'title' => ['required','string','max:255'], 
+           'caption' => ['required','string'], 
             'phone_number' => ['required', 'numeric'],  
             'email' => ['required','email'], 
             'address' => ['required','string','max:255'], 

@@ -27,6 +27,13 @@
           </a>
         </li>
 
+         <li class="pc-item">
+          <a href="{{route('admin.welcome.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-house-door"></i></span>
+            <span class="pc-mtext">Home</span>
+          </a>
+        </li>
+
         <li class="pc-item">
           <a href="{{route('admin.feature.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="bi bi-images"></i></span>

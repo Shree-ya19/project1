@@ -25,7 +25,13 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('admin.about.create');
+         $aboutsCount = About::count();
+       if ($aboutsCount >= 1) {
+    Alert::error('Limit Reached', 'You cannot add more than 1 about data');
+    return redirect()->route('admin.about.index');
+}
+
+return view('admin.about.create');
     }
 
     /**

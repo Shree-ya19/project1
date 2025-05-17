@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('core_values', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('describe');
+            $table->text('describe');
             $table->timestamps();
             $table->softDeletes();
         });

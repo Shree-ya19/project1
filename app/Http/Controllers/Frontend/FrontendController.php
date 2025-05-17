@@ -17,6 +17,7 @@ use App\Models\InterestForm;
 use App\Models\LatestNews;
 use App\Models\SystemSetting;
 use App\Models\UpcomingEvent;
+use App\Models\Welcome;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
@@ -106,14 +107,15 @@ class FrontendController extends Controller
     }
     public function about_us()
     {
-        $abouts=About::all();
+        $abouts=About::limit(1)->get();
         $systemsetting = SystemSetting::first();
         return view("frontend.about_us",compact('abouts','systemsetting'));
     }
     public function home()
     {
+        $welcomes=Welcome::all();
         $features=Feature::limit(4)->get();
-        return view("welcome",compact('features'));
+        return view("welcome",compact('features','welcomes'));
     }
     public function form_of_interest()
     {

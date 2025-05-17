@@ -1,9 +1,28 @@
 @extends('frontend.layout.master')
 
 @section('container')
+<style>
+    .interesth{
+        margin-top:72px;
+        color:#00440b;
+    }
+    .interestform{
+        background-color:  #00440b;
+        color:#d6bc1a;
+    }
+    .interestbtn{
+        background-color: #d6bc1a;
+        color:#00440b;
+        border:2px solid #d6bc1a;
+    }
+    .interestbtn:hover{
+        background-color: #d6bc1a;
+        color:#00440b;
+        border:2px solid #d6bc1a;
+    }
+</style>
 
-
-<h2 class="text-center mb-4 interesth">💬 Express Your Interest</h2>
+<h2 class="text-center mb-4 interesth"> Express Your Interest</h2>
 
 @if (session('success'))
     <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -11,7 +30,7 @@
     </div>
 @endif
 
-<div class="container mt-3 interestform mb-5" style="max-width: 650px;">
+<div class="container-fluid mt-3 interestform mb-5" style="max-width: 650px;">
 
     {{-- SHOW VALIDATION ERRORS --}}
     @if ($errors->any())

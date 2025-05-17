@@ -29,10 +29,26 @@
             
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link home" href="{{ route('student_login') }}">Login</a>
-        </li>
-            
+@if(Auth::guard('customer')->check())
+    <!-- User is logged in, show Logout button -->
+    <li class="nav-item">
+        <form method="POST" action="{{ route('customer.logout') }}">
+            @csrf
+            <button type="submit" class="nav-link btn btn-link home" >
+                Logout
+            </button>
+        </form>
+    </li>
+@else
+    <!-- User is NOT logged in, show Login link -->
+    <li class="nav-item">
+        <a class="nav-link home" href="{{ route('customer.loginPage') }}">Login</a>
+    </li>
+@endif
+
+
+   
+
           
         
         <li class="nav-item">

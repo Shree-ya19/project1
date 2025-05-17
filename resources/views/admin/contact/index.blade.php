@@ -19,7 +19,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $message->full_name }}</td>
                 <td>{{ $message->email }}</td>
-                <td>{{ Str::limit($message->message, 50) }}</td>
+                <td>{{ $message->message}}</td>
                 <td>
                     @if ($message->status)
                         <span class="badge bg-success">Seen</span>
@@ -28,9 +28,9 @@
                     @endif
                 </td>
                 <td>
-    <a href="{{ route('admin.contact.show', $message->id) }}" class="btn btn-primary btn-sm">View</a>
+    <a href="{{ route('admin.contact.show', $message) }}" class="btn btn-primary btn-sm">View</a>
 
-    <form action="{{ route('admin.contact.destroy', $message->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Delete this message?')">
+    <form action="{{ route('admin.contact.destroy', $message) }}" method="POST" style="display:inline;" onsubmit="return confirm('Delete this message?')">
         @csrf
         @method('DELETE')
         <button class="btn btn-danger btn-sm">Delete</button>

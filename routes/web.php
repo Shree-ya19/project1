@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadController;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+ //   return view('welcome');
+//});
 
 
 
@@ -34,8 +35,6 @@ Route::get('beyond_acedemics', [FrontendController::class, 'beyond_acedemics'])-
 Route::post('storeContactMessage', [FrontendController::class, 'storeContactMessage'])->name('storeContactMessage');
 Route::get('contact_us', [FrontendController::class, 'contact_us'])->name('contact_us');
 Route::get('core_values', [FrontendController::class, 'core_values'])->name('core_values');
-Route::get('student_login', [FrontendController::class, 'student_login'])->name('student_login');
-Route::get('student_register', [FrontendController::class, 'student_register'])->name('student_register');
 Route::get('about_us', [FrontendController::class, 'about_us'])->name('about_us');
 Route::get('form_of_interest', [FrontendController::class, 'form_of_interest'])->name('form_of_interest');
 Route::post('storeInterestForm', [FrontendController::class, 'storeInterestForm'])->name('storeInterestForm');
@@ -46,11 +45,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
-
     //Ck editor
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 
 });
+Route::get('customer/register',[CustomerAuthController::class,'registerPage'])->name('customer.register');
+Route::post('customer/register',[CustomerAuthController::class,'register'])->name('customer.register');
+
+Route::get('customer/login',[CustomerAuthController::class,'loginPage'])->name('customer.loginPage');
+Route::post('customer/login',[CustomerAuthController::class,'login'])->name('customer.login');
+
 
 require __DIR__.'/auth.php';
+require __DIR__.'/customer.php';
+
