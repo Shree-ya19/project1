@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BeyondAcedemicController; // <-- Check spelling h
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\CoreValueController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\GoldenAbcMemberController;
@@ -47,3 +48,4 @@ Route::resource('level', LevelController::class);
 Route::resource('subject', SubjectController::class);
 Route::resource('about', AboutController::class);
 Route::resource('welcome', WelcomeController::class);
+Route::resource('customer', CustomerController::class);

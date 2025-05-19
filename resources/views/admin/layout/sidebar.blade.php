@@ -28,6 +28,13 @@
         </li>
 
          <li class="pc-item">
+          <a href="{{route('admin.customer.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-person-fill"></i></span>
+            <span class="pc-mtext">Guest User</span>
+          </a>
+        </li>
+
+         <li class="pc-item">
           <a href="{{route('admin.welcome.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="bi bi-house-door"></i></span>
             <span class="pc-mtext">Home</span>
