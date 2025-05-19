@@ -75,6 +75,17 @@
   }
 </style>
 
+
+    @if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
 <!-- Carousel -->
 <div id="schoolCarousel" class="carousel slide school-carousel" data-bs-ride="carousel">
   <div class="carousel-inner">

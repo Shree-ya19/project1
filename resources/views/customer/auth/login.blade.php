@@ -11,6 +11,16 @@
             <p>Log in to access your school dashboard, results, announcements, and more!</p>
         </div>
     </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
     <div class="form-side">
         <div class="form-box">

@@ -28,7 +28,7 @@ class RegisterCustomerRequest extends FormRequest
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Customer::class],
                 'password' => ['required', 'confirmed'],
-                'image' => ['required','image'],
+                
               
         ];
     }

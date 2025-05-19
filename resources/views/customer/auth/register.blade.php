@@ -1,3 +1,4 @@
+
 @extends('frontend.layout.master')
 @section('container')
 
@@ -11,6 +12,16 @@
             <p>Create your school account to get started with results, announcements, and more!</p>
         </div>
     </div>
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
 
     <div class="form-side">
         <div class="form-box">
@@ -37,7 +48,7 @@
 
 
     <!-- ✅ Image Upload Field -->
-    <input type="file" name="image" class="form-control" accept="image/*">
+  
 
     <button type="submit" class="btn-login mt-2">Register</button>
 </form>

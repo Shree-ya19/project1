@@ -8,6 +8,7 @@ use App\Http\Requests\Customer\RegisterCustomerRequest;
 use App\Models\Customer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerAuthController extends Controller
 {
@@ -22,11 +23,14 @@ class CustomerAuthController extends Controller
     }
     
 	public function register(RegisterCustomerRequest $request)
-    {
-        $customer = Customer::create($request->validated());
+{
+    $data = $request->validated();
+    $data['password'] = Hash::make($data['password']); // ✅ Hash the password
 
-        return redirect(route('customer.loginPage'));
-    }
+    Customer::create($data);
+
+    return redirect(route('customer.loginPage'))->with('success', 'Your account has been registered successfully');
+}
 
 	public function login(LoginCustomerRequest $request): RedirectResponse
     {
@@ -34,13 +38,13 @@ class CustomerAuthController extends Controller
     
             $request->session()->regenerate();
     
-            return redirect(route('welcome'));
+            return redirect(route('welcome'))->with('success','Your acount has been logged in succesfully');
     
     }
     public function logout()
     {
         Auth::guard('customer')->logout();
-        return redirect(route('customer.loginPage'));
+        return redirect(route('customer.loginPage'))->with('success','Your account has been logout');
     }
 
 
