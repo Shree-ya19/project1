@@ -11,16 +11,16 @@
             <p>Log in to access your school dashboard, results, announcements, and more!</p>
         </div>
     </div>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+    @if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
 @endif
-
 
     <div class="form-side">
         <div class="form-box">

@@ -38,13 +38,13 @@ class CustomerAuthController extends Controller
     
             $request->session()->regenerate();
     
-            return redirect(route('welcome'))->with('success','Your acount has been logged in succesfully');
+            return redirect(route('welcome'))->with('success','Your account has been logged in');
     
     }
     public function logout()
     {
         Auth::guard('customer')->logout();
-        return redirect(route('customer.loginPage'))->with('success','Your account has been logout');
+        return redirect(route('customer.loginPage'))->with('success','Your account has been logged out');
     }
 
 

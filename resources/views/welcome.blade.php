@@ -1,6 +1,7 @@
 @extends('frontend.layout.master')
 @section('container')
 <!----SLIDE START---------------------------------------------------------------------------->
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
   .school-carousel .carousel-item {
     height: 80vh;
