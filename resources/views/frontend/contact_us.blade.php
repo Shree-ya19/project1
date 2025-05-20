@@ -57,29 +57,46 @@
         <h2 class="text-center contacth"><i class="bi bi-telephone"></i> Contact Us</h2>
         <p class="text-center mb-5">Feel free to reach out to us for any inquiries, admissions, or feedback!</p>
 
-        @if (session('success'))
-            <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
+       @if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
+
+ @if ($errors->any())
+    <div class="alert alert-danger" id="error-alert">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+
+    <script>
+        // After 6 seconds (6000 ms), fade out and remove the alert
+        setTimeout(() => {
+            const alert = document.getElementById('error-alert');
+            if (alert) {
+                alert.style.transition = "opacity 0.5s ease";
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500); // remove from DOM after fade out
+            }
+        }, 6000);
+    </script>
+@endif
+
 
         <div class="row">
             <!-- Contact Form -->
             <div class="col-md-6">
                 <div class="card shadow-sm p-4 contactcol">
                     <h4 class="mb-3"><i class="bi bi-chat-left-text"></i> Send us a message</h4>
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    <form action="{{ route('storeContactMessage') }}" method="post">
+                <form action="{{ route('storeContactMessage') }}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label for="full_name" class="form-label">Full Name</label>

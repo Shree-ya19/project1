@@ -24,12 +24,16 @@
 
 <h2 class="text-center mb-4 interesth"> Express Your Interest</h2>
 
-@if (session('success'))
-    <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-    </div>
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
 @endif
-
 <div class="container-fluid mt-3 interestform mb-5" style="max-width: 650px;">
 
     {{-- SHOW VALIDATION ERRORS --}}

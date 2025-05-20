@@ -11,6 +11,17 @@
             <p>Log in to access your school dashboard, results, announcements, and more!</p>
         </div>
     </div>
+    @if(session('error'))
+<script>
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: "{{ session('error') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
+
     @if(session('success'))
 <script>
     Swal.fire({

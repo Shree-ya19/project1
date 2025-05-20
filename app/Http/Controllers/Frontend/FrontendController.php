@@ -70,27 +70,41 @@ class FrontendController extends Controller
         return view("frontend.contact_us");
     }
     public function storeContactMessage(StoreContactRequest $request)
-    {
-        Contact::create([
-            'full_name' => $request->full_name,
-            'email' => $request->email,
-            'message' => $request->message,
-        ]);
-    
-        return redirect()->back()->with('success', 'Message sent successfully!');
-    }
-    public function storeInterestForm(StoreInterestRequest $request)
 {
-   InterestForm::create([
+    // Check if the user is logged in as a customer
+    if (!auth('customer')->check()) {
+        return redirect()->route('customer.loginPage')
+                         ->with('error', 'You must login first to submit the contact form.');
+    }
+
+    Contact::create([
+        'full_name' => $request->full_name,
+        'email' => $request->email,
+        'message' => $request->message,
+    ]);
+
+    return redirect()->back()->with('success', 'Message sent successfully!');
+}
+
+   public function storeInterestForm(StoreInterestRequest $request)
+{
+    // Check if the user is logged in as a customer
+    if (!auth('customer')->check()) {
+        return redirect()->route('customer.loginPage')
+                         ->with('error', 'You must login first to submit the interest form.');
+    }
+
+    InterestForm::create([
         'full_name' => $request->full_name,
         'email' => $request->email,
         'phone_number' => $request->phone_number,
         'interest' => $request->interest,
         'message' => $request->message,
-   ]);
+    ]);
 
-   return redirect()->back()->with('success', 'Your interest has been submitted successfully!');
+    return redirect()->back()->with('success', 'Your interest has been submitted successfully!');
 }
+
 
     
         
