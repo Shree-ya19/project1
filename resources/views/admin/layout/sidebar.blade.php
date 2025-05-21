@@ -86,7 +86,7 @@
       
         <li class="pc-item pc-hasmenu">
   <a href="#" class="pc-link">
-    <span class="pc-micon"><i class="ti ti-info-circle"></i></span>
+    <span class="pc-micon"><i class="bi bi-caret-down-square-fill"></i></span>
     <span class="pc-mtext">About Us</span>
   </a>
   <ul class="pc-submenu">
@@ -113,7 +113,7 @@
 
         <li class="pc-item">
           <a href="{{route('admin.contact.index')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
+            <span class="pc-micon"><i class="bi bi-telephone-fill"></i></span>
             <span class="pc-mtext">Contact Us</span>
           </a>
         </li>
