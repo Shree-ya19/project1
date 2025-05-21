@@ -181,55 +181,80 @@
 <!--WHY US CONTAINER ENDS-------------------------------------------------------------------------->
 <style>
 .review-slider {
-  height: 250px;
+  height: 180px; /* Reduced overall height */
   overflow: hidden;
   position: relative;
 }
+
 .review-track {
   display: flex;
-  width: calc(200%);
+  width: 200%;
   animation: scrollSlider 30s linear infinite;
   gap: 1rem;
+  align-items: stretch;
 }
+
 .review-card {
   flex: 0 0 25%;
   background: #00440b;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s;
+  color: #e7d31f;
+  height: 160px; /* Reduced height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
+
 .review-card h5 {
   color: #e7d31f;
   font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
+
 .review-card p {
   font-style: italic;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
   color: #e7d31f;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 0;
 }
+
 .btn-review {
   background-color: #00440b;
   color: #e7d31f;
-  margin-top: -92px;
-  margin-bottom: 95px;
+  margin-top: 35px;
+  margin-bottom: 100px;
   position: relative;
   z-index: 10;
 }
+
 .btn-review:hover {
   border: 2px solid #00440b;
   color: white;
 }
+
 @keyframes scrollSlider {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
 @media (max-width: 768px) {
-  .review-card { flex: 0 0 50%; }
+  .review-card {
+    flex: 0 0 50%;
+    height: auto;
+  }
 }
 </style>
+
 
 <!-- Reviews Section -->
  

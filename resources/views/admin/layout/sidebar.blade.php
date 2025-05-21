@@ -16,13 +16,6 @@
         </li>
 
         <li class="pc-item">
-          <a href="{{route('admin.review.index')  }}" class="pc-link">
-            <span class="pc-micon"><i class="bi bi-person-fill"></i></span>
-            <span class="pc-mtext">Reviews</span>
-          </a>
-        </li>
-
-        <li class="pc-item">
           <a href="{{route('admin.user.index')  }}" class="pc-link">
             <span class="pc-micon"><i class="bi bi-person-fill"></i></span>
             <span class="pc-mtext">Dashboard User</span>
@@ -49,6 +42,21 @@
             <span class="pc-mtext">Features(Home)</span>
           </a>
         </li>
+
+        <li class="pc-item">
+          <a href="{{route('admin.review.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-chat-left-dots-fill"></i></span>
+            <span class="pc-mtext">Reviews</span>
+          </a>
+        </li>
+
+         <li class="pc-item">
+          <a href="{{route('admin.systemSetting.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-gear-wide"></i></span>
+            <span class="pc-mtext">SystemSetting</span>
+          </a>
+        </li>
+
         <li class="pc-item">
           <a href="{{route('admin.about.index')  }}" class="pc-link">
           <span class="pc-micon"><i class="bi bi-archive"></i></span>
@@ -67,12 +75,6 @@
     </ul>
   </li>
         
-        <li class="pc-item">
-          <a href="{{route('admin.corevalue.index')  }}" class="pc-link">
-          <span class="pc-micon"><i class="bi bi-bookmark-heart-fill"></i></span>
-            <span class="pc-mtext">Core Values</span>
-          </a>
-        </li>
          
         <li class="pc-item">
           <a href="{{route('admin.admission.index')  }}" class="pc-link">
@@ -81,12 +83,7 @@
           </a>
         </li>
 
-        <li class="pc-item">
-          <a href="{{route('admin.systemSetting.index')  }}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-typography"></i></span>
-            <span class="pc-mtext">SystemSetting</span>
-          </a>
-        </li>
+      
         <li class="pc-item pc-hasmenu">
   <a href="#" class="pc-link">
     <span class="pc-micon"><i class="ti ti-info-circle"></i></span>
@@ -108,6 +105,7 @@
   <li><a class="pc-link" href="{{ route('admin.calendar.index') }}">Event Calendar</a></li>
   <li><a class="pc-link" href="{{route('admin.beyondacademic.index')}}">Beyond Academics</a></li>
   <li><a class="pc-link" href="{{ route('admin.interestform.index') }}">Form of Interest</a></li>
+  <li><a class="pc-link" href="{{ route('admin.corevalue.index') }}">Core Value</a></li>
 
 </ul>
 
