@@ -99,15 +99,17 @@ background-color: #00440b;
 .container1{
     margin-top: 100px;
     margin-bottom:100px;
+    text-align: justify;
 }
 
 .intro{
     text-align:center;
     color:#00440b;
     margin-top:-50px;
+    
 }
 .intropara{
-    text-align: justify;
+    text-align: justify ;
     margin-top: 10px;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -139,7 +141,7 @@ background-color: #00440b;
     margin-bottom: 50px;
     padding:15px;
     background-color: #00440b;
-    margin-top: -40px;
+   
    
 }
 .sliderrow{
@@ -196,6 +198,7 @@ background-color: #00440b;
 .whycontainer{
     padding:40px;
     margin-bottom: 20px;
+    text-align: justify;
 }
 .whyh{
     font-weight: bold;
@@ -207,6 +210,7 @@ background-color: #00440b;
 .whyp{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
+    text-align: justify;
 }
 .whycard{
     border:2px solid #00440b;

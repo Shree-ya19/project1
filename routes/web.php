@@ -38,7 +38,10 @@ Route::get('core_values', [FrontendController::class, 'core_values'])->name('cor
 Route::get('about_us', [FrontendController::class, 'about_us'])->name('about_us');
 Route::get('form_of_interest', [FrontendController::class, 'form_of_interest'])->name('form_of_interest');
 Route::post('storeInterestForm', [FrontendController::class, 'storeInterestForm'])->name('storeInterestForm');
-Route::get('gallery', [FrontendController::class, 'gallery'])->name('gallery');
+Route::get('reviewall', [FrontendController::class, 'reviewall'])->name('frontend.reviewall');
+Route::get('give_review', [FrontendController::class, 'give_review'])->name('frontend.give_review');
+Route::post('storeSubmitReview', [FrontendController::class, 'storeSubmitReview'])->name('storeSubmitReview');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

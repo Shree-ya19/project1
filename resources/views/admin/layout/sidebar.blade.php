@@ -15,9 +15,11 @@
           </a>
         </li>
 
-        <li class="pc-item pc-caption">
-          <label>UI Components</label>
-          <i class="ti ti-dashboard"></i>
+        <li class="pc-item">
+          <a href="{{route('admin.review.index')  }}" class="pc-link">
+            <span class="pc-micon"><i class="bi bi-person-fill"></i></span>
+            <span class="pc-mtext">Reviews</span>
+          </a>
         </li>
 
         <li class="pc-item">

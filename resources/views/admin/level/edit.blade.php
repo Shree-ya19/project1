@@ -70,7 +70,7 @@
                 </div>
                 <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea name="description" class="form-control" rows="4">{{ old('description') }}</textarea>
+                <textarea name="description" class="form-control" id="editor" rows="4">{{ old('description') }}</textarea>
             </div>
 
 

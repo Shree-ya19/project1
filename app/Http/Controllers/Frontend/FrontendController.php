@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\StoreContactRequest;
 use App\Http\Requests\InterestForm\StoreInterestRequest;
+use App\Http\Requests\Review\StoreSubmitReview;
 use App\Models\About;
 use App\Models\Admission;
 use App\Models\BeyondAcademic;
@@ -15,6 +16,7 @@ use App\Models\Feature;
 use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
+use App\Models\Review;
 use App\Models\SystemSetting;
 use App\Models\UpcomingEvent;
 use App\Models\Welcome;
@@ -127,9 +129,10 @@ class FrontendController extends Controller
     }
     public function home()
     {
+        $reviews = Review::where('is_approved', true)->latest()->limit(10)->get();
         $welcomes=Welcome::all();
         $features=Feature::limit(4)->get();
-        return view("welcome",compact('features','welcomes'));
+        return view("welcome",compact('features','welcomes','reviews'));
     }
     public function form_of_interest()
     {
@@ -139,8 +142,32 @@ class FrontendController extends Controller
     {
         return view("frontend.student_register");
     }
-    public function gallery()
-    {
-        return view("frontend.gallery");
+    public function reviewall()
+    {    
+        $reviews = Review::where('is_approved', true)->get();
+
+    return view('frontend.reviewall', compact('reviews'));
     }
+
+    // Show the review form (GET request)
+public function give_review()
+{
+    $reviews = Review::latest()->limit(2)->get();
+    return view("frontend.give_review",compact('reviews'));
+}
+
+// Handle the review form submission (POST request)
+public function storeSubmitReview(StoreSubmitReview $request)
+{
+    Review::create([
+        'name' => $request->name,
+        'relation' => $request->relation,
+        'message' => $request->message,
+        'is_approved' => false,  // default to pending approval
+    ]);
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Thank you! Your review will be shown after admin approval.');
+}
+
 }

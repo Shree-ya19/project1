@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\InterestFormController;
 use App\Http\Controllers\Admin\LatestNewsController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\SystemSettingController;
 use App\Http\Controllers\Admin\UpcomingEventsController;
@@ -49,3 +50,6 @@ Route::resource('subject', SubjectController::class);
 Route::resource('about', AboutController::class);
 Route::resource('welcome', WelcomeController::class);
 Route::resource('customer', CustomerController::class);
+Route::resource('review', ReviewController::class);
+Route::put('review/{review}/approve', [ReviewController::class, 'approve'])->name('review.approve');
+
