@@ -29,25 +29,46 @@
             
           </ul>
         </li>
+{{-- CUSTOMER AUTH CHECK --}}
+{{-- CUSTOMER LOGGED IN --}}
 @if(Auth::guard('customer')->check())
-    <!-- User is logged in, show Logout button -->
     <li class="nav-item">
         <form method="POST" action="{{ route('customer.logout') }}">
             @csrf
-            <button type="submit" class="nav-link btn btn-link home" >
+            <button type="submit" class="nav-link btn btn-link home">
                 Logout
             </button>
         </form>
     </li>
+
+{{-- ADMIN LOGGED IN --}}
+@elseif(Auth::check())
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle home" href="#" role="button" data-bs-toggle="dropdown">
+            {{ Auth::user()->name }} (Admin)
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <button class="dropdown-item" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+
+{{-- NO ONE LOGGED IN --}}
 @else
-    <!-- User is NOT logged in, show Login link -->
-    <li class="nav-item">
-        <a class="nav-link home" href="{{ route('customer.loginPage') }}">Login</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle home" href="#" role="button" data-bs-toggle="dropdown">
+            Login
+        </a>
+        <ul class="dropdown-menu drop1">
+            <li><a class="dropdown-item home1" href="{{ route('admin.login') }}">Admin Login</a></li>
+            <li><a class="dropdown-item home1" href="{{ route('customer.loginPage') }}">Customer Login</a></li>
+        </ul>
     </li>
 @endif
-
-
-   
 
           
         

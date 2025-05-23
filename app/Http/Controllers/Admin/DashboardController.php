@@ -27,6 +27,6 @@ class DashboardController extends Controller
     {
          
         Auth::guard('web')->logout(); 
-        return redirect(route('login')); 
+        return redirect(route('welcome')); 
     }
 }

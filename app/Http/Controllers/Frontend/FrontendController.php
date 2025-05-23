@@ -43,6 +43,11 @@ class FrontendController extends Controller
     }
     public function golden_family()
     {
+
+          if (!auth('customer')->check()) {
+        return redirect()->route('customer.loginPage')
+                         ->with('error', 'You must login first to see the members.');
+    }
         $goldenmembers = GoldenMember::all();
     
         // Filter the members by role
@@ -151,7 +156,11 @@ class FrontendController extends Controller
 
     // Show the review form (GET request)
 public function give_review()
-{
+{  if (!auth('customer')->check()) {
+        return redirect()->route('customer.loginPage')
+                         ->with('error', 'You must login first to give review');
+    }
+
     $reviews = Review::latest()->limit(2)->get();
     return view("frontend.give_review",compact('reviews'));
 }

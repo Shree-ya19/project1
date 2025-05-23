@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -58,6 +59,13 @@ Route::post('customer/register',[CustomerAuthController::class,'register'])->nam
 Route::get('customer/login',[CustomerAuthController::class,'loginPage'])->name('customer.loginPage');
 Route::post('customer/login',[CustomerAuthController::class,'login'])->name('customer.login');
 
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AdminLoginController::class, 'login']);
+    Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout');
+});
 
 require __DIR__.'/auth.php';
 require __DIR__.'/customer.php';
