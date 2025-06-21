@@ -30,38 +30,36 @@
     <p class="text-center mb-5 highlight-title">Explore our structured academic journey designed to support students from their first steps to secondary level education.</p>
 
     <!-- Pre-Primary Section -->
+    @foreach($levels as $level)
     <div class="card shadow-sm mb-5 p-4 program-section">
-        <h4 class="mb-3 program-title">Pre-Primary (Nursery to UKG)</h4>
+        <h4 class="mb-3 program-title">{{ $level->title }}</h4>
         <div class="row">
-            @foreach(['Nursery', 'LKG', 'UKG'] as $class)
+            @foreach($level->levels as $class)
             <div class="col-md-4 mb-4">
                 <div class="card h-100 program-card shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title highlight-title">{{ $class }}</h5>
+                        <h5 class="card-title highlight-title">{{ $class->title }}</h5>
                         <ul>
-                            <li>Rhymes</li>
-                            <li>Alphabet Recognition</li>
-                            <li>Number Recognition</li>
-                            <li>Creative Play</li>
-                            <li>Group Activities</li>
+                            @foreach($class->subjects as $subject)
+                            <li>{{ $subject->title }}</li>
+                           @endforeach
                         </ul>
                         <div class="mt-3">
                             <h6 class="highlight-title">Program Highlights</h6>
-                            <ul>
-                                <li>Interactive learning for {{ $class }}</li>
-                                <li>Play-based activities</li>
-                                <li>Basic life skills</li>
-                            </ul>
+                            {!! $class->description !!}
                         </div>
                     </div>
                 </div>
             </div>
+
             @endforeach
+
         </div>
     </div>
+    @endforeach
 
     <!-- Primary Section -->
-    <div class="card shadow-sm mb-5 p-4 program-section">
+    <!-- <div class="card shadow-sm mb-5 p-4 program-section">
         <h4 class="mb-3 program-title">Primary (Grade 1 to 5)</h4>
         <div class="row">
             @for($i = 1; $i <= 5; $i++)
@@ -92,10 +90,10 @@
             </div>
             @endfor
         </div>
-    </div>
+    </div> -->
 
     <!-- Lower Secondary Section -->
-    <div class="card shadow-sm mb-5 p-4 program-section">
+    <!-- <div class="card shadow-sm mb-5 p-4 program-section">
         <h4 class="mb-3 program-title">Lower Secondary (Grade 6 to 8)</h4>
         <div class="row">
             @for($i = 6; $i <= 8; $i++)
@@ -127,10 +125,10 @@
             </div>
             @endfor
         </div>
-    </div>
+    </div> -->
 
     <!-- Secondary Section -->
-    <div class="card shadow-sm mb-5 p-4 program-section">
+    <!-- <div class="card shadow-sm mb-5 p-4 program-section">
         <h4 class="mb-3 program-title">Secondary (Grade 9 & 10)</h4>
         <div class="row">
             @for($i = 9; $i <= 10; $i++)
@@ -161,7 +159,7 @@
             </div>
             @endfor
         </div>
-    </div>
+    </div> -->
 </div>
 
 @endsection

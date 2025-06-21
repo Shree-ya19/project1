@@ -16,7 +16,9 @@ use App\Models\Feature;
 use App\Models\GoldenMember;
 use App\Models\InterestForm;
 use App\Models\LatestNews;
+use App\Models\Level;
 use App\Models\Review;
+use App\Models\Subject;
 use App\Models\SystemSetting;
 use App\Models\UpcomingEvent;
 use App\Models\Welcome;
@@ -27,7 +29,9 @@ class FrontendController extends Controller
 {
     public function programs()
     {
-        return view("frontend.programs");
+        $levels = Level::whereNull("level_id")->get();
+
+        return view("frontend.programs",compact('levels'));
     }
     public function admission()
     {   
@@ -161,7 +165,7 @@ public function give_review()
                          ->with('error', 'You must login first to give review');
     }
 
-    $reviews = Review::latest()->limit(2)->get();
+ $reviews = Review::where('is_approved', true)->latest()->limit(2)->get();
     return view("frontend.give_review",compact('reviews'));
 }
 

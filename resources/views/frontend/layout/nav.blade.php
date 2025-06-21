@@ -42,22 +42,7 @@
     </li>
 
 {{-- ADMIN LOGGED IN --}}
-@elseif(Auth::check())
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle home" href="#" role="button" data-bs-toggle="dropdown">
-            {{ Auth::user()->name }} (Admin)
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-                <form method="POST" action="{{ route('admin.logout') }}">
-                    @csrf
-                    <button class="dropdown-item" type="submit">Logout</button>
-                </form>
-            </li>
-        </ul>
-    </li>
-
-{{-- NO ONE LOGGED IN --}}
+<!--  -->
 @else
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle home" href="#" role="button" data-bs-toggle="dropdown">

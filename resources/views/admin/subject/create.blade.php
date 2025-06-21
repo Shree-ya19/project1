@@ -55,7 +55,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Level:</label>
-                <select name="category_id" class="form-control">
+                <select name="level_id" class="form-control">
                     <option value="">Select Level</option>
                     @foreach($levels as $level)
                         <option value="" disabled>{{ $level->title }}</option>

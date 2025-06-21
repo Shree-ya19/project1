@@ -10,23 +10,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subject extends Model
 {
-    use HasFactory,SoftDeletes;
-    protected $fillable =[
-'title',
-'level_id',
-'position',
-'slug',
+    use HasFactory, SoftDeletes;
+    protected $fillable = [
+        'title',
+        'level_id',
+        'position',
+        'slug',
     ];
 
     public function level(): BelongsTo
     {
-        return $this->belongsTo(Level::class,'level_id');
+        return $this->belongsTo(Level::class, 'level_id');
     }
     public function levels(): HasMany
-{
-    return $this->hasMany(Level::class, 'level_id');
-}
-
-
-
+    {
+        return $this->hasMany(Level::class, 'level_id');
+    }
 }

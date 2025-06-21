@@ -1,7 +1,7 @@
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header">
-      <a href="index.html" class="b-brand text-primary">
+      <a href="{{ route('admin.admin.dashboard') }}" class="b-brand text-primary">
         <!-- ========   Change your logo from here   ============ -->
         <span>{{ Auth::user()->name }}</span>
       </a>
@@ -9,10 +9,11 @@
     <div class="navbar-content">
       <ul class="pc-navbar">
         <li class="pc-item">
-          <a href="index.html" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
-            <span class="pc-mtext">Dashboard</span>
-          </a>
+         <a href="{{ route('admin.admin.dashboard') }}" class="pc-link">
+    <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+    <span class="pc-mtext">Dashboard</span>
+</a>
+
         </li>
 
         <li class="pc-item">

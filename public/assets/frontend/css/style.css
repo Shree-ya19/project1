@@ -31,7 +31,7 @@
 
 /*------------NAVBAR START----------------------------*/
 .nav2{
-    background-color:rgba(0, 68, 11, 0.5); /* Make the navbar transparent initially */
+    background-color:#00440b; /* Make the navbar transparent initially */
     position: fixed; /* Position over the slider */
     top: 0; /* Stick to the top of the screen */
     width: 100%; /* Full width */
