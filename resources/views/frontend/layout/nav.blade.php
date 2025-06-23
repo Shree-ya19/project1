@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active homee" aria-current="page" href="{{ route('welcome') }}">Home</a>
+          <a class="nav-link  homee" aria-current="page" href="{{ route('welcome') }}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link home" href="{{ route('programs') }}">Programs</a>
@@ -50,7 +50,7 @@
         </a>
         <ul class="dropdown-menu drop1">
             <li><a class="dropdown-item home1" href="{{ route('admin.login') }}">Admin Login</a></li>
-            <li><a class="dropdown-item home1" href="{{ route('customer.loginPage') }}">Customer Login</a></li>
+            <li><a class="dropdown-item home1" href="{{ route('customer.loginPage') }}">Guest Login</a></li>
         </ul>
     </li>
 @endif

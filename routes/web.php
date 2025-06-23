@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +43,7 @@ Route::post('storeInterestForm', [FrontendController::class, 'storeInterestForm'
 Route::get('reviewall', [FrontendController::class, 'reviewall'])->name('frontend.reviewall');
 Route::get('give_review', [FrontendController::class, 'give_review'])->name('frontend.give_review');
 Route::post('storeSubmitReview', [FrontendController::class, 'storeSubmitReview'])->name('storeSubmitReview');
-
+Route::get('/search',[SearchController::class,'search'])->name('search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

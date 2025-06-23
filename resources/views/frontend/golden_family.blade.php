@@ -100,6 +100,49 @@
         align-items: center;
         height: 100%;
     }
+    .custom-search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+
+.custom-search-form input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #00440b;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.custom-search-form input[type="text"]:focus {
+    border-color: #e7d31f;
+    box-shadow: 0 0 5px rgba(231, 211, 31, 0.4);
+}
+
+.custom-search-form button {
+    background-color: #00440b;
+    color: #e7d31f;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+   
+}
+
+.custom-search-form button:hover {
+    background-color: #e7d31f;
+    color: #00440b;
+}
+
+
 
 </style>
 
@@ -121,6 +164,14 @@
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="dedicated-members-tab" data-bs-toggle="tab" href="#dedicated-members" role="tab" aria-controls="dedicated-members" aria-selected="false">Other Dedicated Members</a>
         </li>
+
+        <div class="my-3">
+    <form action="{{ route('search') }}" method="GET" class="custom-search-form" role="search"> <!--action ra method thapeko-->
+                    <input type="text" placeholder="Search" name="search" /> <!--name ma search rakhnu parxa-->
+                    <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+</div>
+
     </ul>
     <div class="tab-content" id="myTabContent">
         <!-- PRINCIPAL SECTION -->
@@ -227,5 +278,6 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 </script>
+
 
 @endsection
