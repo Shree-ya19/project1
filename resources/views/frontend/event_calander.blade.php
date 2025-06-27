@@ -26,9 +26,7 @@
         <p>You can scroll through the calendar pages directly below, or open it in a new tab as a PDF.</p>
 
         <!-- PDF viewer link -->
-        <a href="{{ $calendar->pdf }}" target="_blank" class="btn  mb-4 pdfbtn">
-            Open Calendar as PDF
-        </a>
+        
     
         <!-- Display calendar images -->
         <div class="calendar-images mt-4">

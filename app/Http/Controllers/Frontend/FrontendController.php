@@ -182,5 +182,10 @@ public function storeSubmitReview(StoreSubmitReview $request)
     // Redirect back with success message
     return redirect()->back()->with('success', 'Thank you! Your review will be shown after admin approval.');
 }
+public function calander()
+    {
+        $calendar = Calendar::first(); 
+    return view("frontend.calander", compact('calendar'));
+    }
 
 }

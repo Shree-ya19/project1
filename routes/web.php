@@ -44,6 +44,7 @@ Route::get('reviewall', [FrontendController::class, 'reviewall'])->name('fronten
 Route::get('give_review', [FrontendController::class, 'give_review'])->name('frontend.give_review');
 Route::post('storeSubmitReview', [FrontendController::class, 'storeSubmitReview'])->name('storeSubmitReview');
 Route::get('/search',[SearchController::class,'search'])->name('search');
+Route::get('calander',[FrontendController::class,'calander'])->name('calander');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

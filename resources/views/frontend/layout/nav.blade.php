@@ -1,3 +1,13 @@
+<style>
+  .nav-link.home:hover,
+.nav-link.home:focus,
+.nav-link.home:active,
+.nav-link.home.show {
+    color: white !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+</style>
 <nav class="navbar navbar-expand-lg nav2">
   <div class="container-fluid">
     <button class="navbar-toggler button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

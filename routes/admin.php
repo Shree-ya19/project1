@@ -24,9 +24,9 @@ use App\Http\Controllers\Admin\WelcomeController;
 use App\Models\Calendar;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])
+    ->middleware(['auth', 'verified'])
+    ->name('admin.dashboard');
 
 Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
 Route::put('profile', [DashboardController::class, 'profileUpdate'])->name('profile.update');

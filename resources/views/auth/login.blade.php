@@ -1,4 +1,25 @@
 <x-guest-layout>
+        @if(session('error'))
+<script>
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: "{{ session('error') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
+
+    @if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        confirmButtonColor: '#00440b'
+    });
+</script>
+@endif
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
